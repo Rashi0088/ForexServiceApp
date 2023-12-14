@@ -1,0 +1,127 @@
+<div class="tradingview-widget-container">
+    <div id="tradingview_abc2e"></div>
+    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+</div>
+<div class="row">
+
+    <div class="col-lg-10 ml-3 ">
+
+        <!-- Default Card Example -->
+        <div class="card mb-4">
+            <div class="card-header">
+                Buying processes
+            </div>
+            <div class="card-body">
+                <div class = "row">
+                    <div class="col-lg-6">
+                        <!-- <button  class="btn btn-lg btn-primary">{{ currName }} Coin Purchasing Process</button>
+                        <br>
+                        <button  class="btn btn-lg btn-success mt-4">Current price:{{ currPrice  }}$</button>
+                        <br>
+                        <button  class="btn btn-lg btn-success mt-4" [value]="balance">Amount in Your Balance: {{ balance }} $</button> -->
+
+                    </div>
+                    <div class=col-lg-6>
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Buy!</h1>
+                            </div>
+                            <form class="user">
+                                <!-- <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" 
+                
+                                    placeholder="Enter the amount you want to buy" [(ngModel)]="miktar" (input)="calculateDollarEquivalent()" name="miktar">
+                                </div>
+                                <div class="form-group" [ngClass]="affordableStatusClass">
+                                    <input type="text" class="form-control form-control-user" [ngClass]="affordableStatusClass"
+                                    placeholder="Equivalent in Dollar Basis: $" [value]="dolarKarsiligi.toFixed(2)" readonly name="dolarKarsiligi">
+                                </div>
+                                
+                                <button (click)="buy()" class="btn btn-primary btn-user btn-block">
+                                    Buy
+                                </button>
+                                <hr>
+                                <div *ngIf="transactionStatus" class="alert " [ngClass]="transactionStatusClass" >{{ transactionStatus }}</div> -->
+                            </form>
+                            <hr>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                Coin Selling Transactions
+            </div>
+            <div class="card-body">
+                <div class = "row">
+                    <div class="col-lg-6">
+                        <!-- <button  class="btn btn-lg btn-primary">{{ currName }} Coin Selling Process</button>
+                        <br>;ljhk
+                        <button  class="btn btn-lg btn-success mt-4">Current price:{{ currPrice  }}$</button>
+                        <br>
+                        <button  class="btn btn-lg btn-success mt-4" [value]="availableCurrency">Amount in Your Balance: {{ availableCurrency }} Piece</button> -->
+
+                    </div>
+                    <div class=col-lg-6>
+                        <div class="p-5">
+                            <div class="text-centouipier">
+                                <h1 class="h4 text-gray-900 mb-4">Sell!</h1>
+                            </div>
+                            <form class="user">
+                                <!-- <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" 
+                
+                                    placeholder="Enter the amount you want to sell" [(ngModel)]="miktar_coin" (input)="calculateDollarEquivalent_coin()" name="miktar_coin">
+                                </div> -->
+                                <!-- <div class="form-group" [ngClass]="affordableStatusClass">
+                                    <input type="text" class="form-control form-control-user" [ngClass]="affordableStatusClass"
+                                    placeholder="Equivalent in Dollar Basis: $" [value]="dolarKarsiligi_coin.toFixed(2)" readonly name="dolarKarsiligi_coin">
+                                </div>
+                                 -->
+                                <!-- <button (click)="sell()" class="btn btn-primary btn-user btn-block">
+                                    Sell
+                                </button> -->
+                                <hr>
+                                <!-- <div *ngIf="transactionStatus_coin" class="alert " [ngClass]="transactionStatusClass" >{{ transactionStatus_coin }}</div> -->
+                            </form>
+                            <hr>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        <div class="card-body">
+            <h3>Recent Transactions</h3>
+
+            <table class="table table-borderless">
+                <thead>
+                    <th scope="col">Dollar Volume</th>
+                    <th scope="col">Quantity of Coins</th>
+                    <th scope="col">Operation type</th>
+                </thead>
+
+                <tbody>
+                    <!-- <ng-container *ngFor="let row of reversedTransactionsArray">
+                      <tr [class.table-success]="row[2] === 'buy'" [class.table-danger]="row[2] !== 'buy'">
+                        <td>{{ row[0]}}</td>
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
+                      </tr>
+                    </ng-container> -->
+                  </tbody>
+                  
+            </table>
+            
+        </div>
+    </div>
+    
+</div>
+
