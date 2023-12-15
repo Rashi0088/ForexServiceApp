@@ -15,6 +15,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TransactionComponent } from './components/transaction/transaction.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 const routes: Routes = [
@@ -36,7 +37,8 @@ const routes: Routes = [
     HeaderComponent,
     RegisterComponent,
     DashboardComponent,
-    TransactionComponent
+    TransactionComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

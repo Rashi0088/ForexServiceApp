@@ -1,0 +1,162 @@
+
+<div class="forx-website" style="width: 100vw;height: 100vh;">
+  <app-header></app-header>
+    <!-- <div class="navbar-container" style="background-color: white;">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: white;">
+        <div class="container-fluid" >
+          <a class="navbar-brand" href="#">Forex<i class="ri-arrow-right-up-line"></i></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" style="display: flex;align-items: center;justify-content: space-around;">
+            <div class="left-nav">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">About</a>
+                </li>
+              </ul>
+            </div>
+            <div class="right-nav">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <button type="button" class="btn btn-success">Success</button>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="login">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="register"></a>
+                </li>
+              </ul>
+            </div>
+          
+          </div>
+        </div>
+      </nav>
+    </div> -->
+  
+    <div class="main-container" style="width: 100%;height: 90vh;text-align: center;">
+      
+      <div class="content-detail" style="position: absolute;transform: translate(-50%,-50%);top: 50%;left: 50%;">
+        <h1 style="font-size: 3em;padding-top: 20px;">MONEY FOR HERE ,THERE AND EVERYWHERE</h1>
+        <p style="font-size: 20px;padding-top: 10px;">160 countries. 40 currencies. Get the account built to save you money round the world.</p>
+        <div class="btns" style="display: flex;align-items: center ;justify-content: center;">
+            <button type="button" class="btn btn-success" style="border-radius: 30px;padding: 10px 20px;margin:  10px;">Open an account</button>
+            <button type="button" class="btn btn-primary" style="border-radius: 30px;padding: 10px 20px;margin:  10px;">Send money now</button>
+        </div>
+      </div>   
+    </div>
+    
+      <!-- <div class="cont-content" style="width: 100%;height: 90vh;text-align: center; background-image: url('https://otap-projects.com/wp-content/uploads/2018/10/fxmm.jpg');opacity: 0.5;">
+        <div class="content-detail" style="position: absolute;transform: translate(-50%,-50%);top: 50%;left: 50%;">
+          <h1 style="font-size: 3em;padding-top: 20px;">MONEY FOR HERE ,THERE AND EVERYWHERE</h1>
+          <p style="font-size: 20px;padding-top: 10px;">160 countries. 40 currencies. Get the account built to save you money round the world.</p>
+          <div class="btns" style="display: flex;align-items: center ;justify-content: center;">
+              <button type="button" class="btn btn-success" style="border-radius: 30px;padding: 10px 20px;margin:  10px;">Open an account</button>
+              <button type="button" class="btn btn-primary" style="border-radius: 30px;padding: 10px 20px;margin:  10px;">Send money now</button>
+          </div>
+        </div> -->
+  
+  
+    <div class="second-cont" style="padding: 1px 30px;display: flex;align-items: center;">
+    <img width="600px" style="margin:-20px auto;padding: 1px 2%;" src="https://img.freepik.com/premium-photo/3d-render-gold-yen-coins-with-world-globe-isolated-white-background-japanese-yen-banknotes_42071-3030.jpg?w=2000" alt="">  
+    </div>
+  
+    <div class="third-cont" style="padding-top: 10%;margin: 10px 0;display: flex;justify-content: space-between;padding: 5% 10%;">
+      <div class="left-side" style="padding-left: 20px;padding: 20px 200px 40px 0px;">
+        <h1 style="font-size: 3em;padding-top: 20px;">Use money, save money, get Wise</h1>
+        <p style="font-size: 20px;padding-top: 10px;">160+ countries, 40 currencies. One account to send, spend and convert money internationally</p>
+        <div class="btns" style="display: flex;align-items: center ;">
+            <button type="button" class="btn btn-success" style="border-radius: 30px;padding: 10px 20px;margin-top: 10px;">Open an account</button>
+        </div>
+        <div class="play-store" style="display: flex;justify-content: space-around;margin-top:30px;margin-left: -10px;">
+          <img src="https://wise.com/public-resources/assets/marketing-components/app-store-badges/en.svg" alt="">
+          <img src="https://wise.com/public-resources/assets/marketing-components/google-play-store-badges/en.svg" alt="">
+        </div>
+      </div>   
+      <div class="right-side" style="padding-right: 20px;">
+        <img width="250px" style="position: absolute;margin-left: -40px;margin-top: 100px;" src="https://wise.com/static-assets/app/_next/static/media/eu.543a6944.png" alt="">
+        <img width="500px" src="https://wise.com/static-assets/app/_next/static/media/cover-img.8a25903c.jpg" alt="">
+      </div>
+    </div>
+      <!-- <div class="content-cont" style="width: 60%;height: 100%;">
+      <h1>Hello</h1></div>
+        <div class="img-cont" style="width: 40%;height: 100%;text-align: center;padding-top: 15vh;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9XiQCLHUwy5ls6kb6myQvCFG-0yxgoZ2ykA&usqp=CAU" width="100%">
+        </div> -->
+        <!-- <img width="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV8L6TA_LqtS95W6dU9EAf2DKbMZJJhEzOzg&usqp=CAU" alt=""> -->
+    
+        <!-- <img width="100%" src="https://www.lseg.com/content/dam/fx/en_us/images/graphic-artwork/hero/lfx2781366-fx-trade-notification-hero.svg" alt=""> -->
+   
+  
+  <div class="fourth-cont" style="background-color: #9fe870;width: 100vw;height: 130vh;display: flex;">
+    <div class="lefty-side" style="width: 50%;padding: 100px 60px;margin: 18vh auto;" >
+      <h2 style="font-size: 3em;padding:20px 5px;font-weight: 700;">Make your money move, fast</h2>
+      <p style="font-size: 20px;padding:20px 5px;">Send to 70+ countries, fast. Free from hidden fees and exchange rate markups</p>
+      <!-- <div class="btns" style="display: flex;align-items: center ;">
+          <button type="button" class="btn btn-success" style="border-radius: 30px;padding: 10px 20px;margin-top: 10px;">Open an account</button>
+      </div> -->
+    </div>   
+    <div class="righty-side" style="background-color: #9fe870;width: 45%;height: 100%;" >
+        <div class="card-four-comp" style="width: 35vw;height: 75%;margin: 14vh auto;background-color: white;border-radius: 25px;">
+
+        </div>
+    </div> 
+  </div>
+  
+  <div class="fifth-cont" style="padding: 70px;">
+    <img width="100%" src="https://wise.com/static-assets/app/_next/static/media/cover.4aa2d90f.jpg" >
+  </div>
+  
+  <div class="sixth-cont" style="background-color: rgb(243, 242, 242);width: 100vw;height: 80vh;padding: 10vh 1vw;">
+      <h1 style="text-align: center;">Wise works in below countries</h1>
+      <!-- <button style="align-items: center;"  type="button" class="btn btn-success" style="padding: 10px 20px;border-radius: 50px;margin: 20px 0;">Send Money</button> -->
+      
+      <div class="currency-cont" style="display: flex;justify-content: space-between;padding: 20px 10px;">
+        <div class="curr-cont" style="height: 40vh;width: 20vw;margin: 30px 0;padding: 10px;">
+            <img height="100vh" style="margin: auto 38px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_India.png/2560px-Flag_of_India.png" alt="">
+            <h6 style="margin: auto 38px;font-size: 30px;text-align: center;padding-top: 30px;font-family: serif;">INDIA</h6>
+        </div>
+        <div class="curr-cont" style="height: 40vh;width: 20vw;margin: 30px 0;padding: 10px;">
+          <img height="100vh" style="margin: auto 38px;" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/2560px-Flag_of_the_United_States.svg.png" alt="">
+          <h6 style="margin: auto 38px;font-size: 30px;text-align: center;padding-top: 30px;font-family: serif;">USA</h6>
+      </div>
+      <div class="curr-cont" style="height: 40vh;width: 20vw;margin: 30px 0;padding: 10px;">
+        <img height="100vh" style="margin: auto 38px;" src="https://img.freepik.com/premium-photo/flag-european-union-eu_469558-1780.jpg" alt="">
+        <h6 style="margin: auto 38px;font-size: 30px;text-align: center;padding-top: 30px;font-family: serif;">EUROPE</h6>
+    </div>
+    <div class="curr-cont" style="height: 40vh;width: 20vw;margin: 30px 0;padding: 10px;">
+      <img height="100vh" style="margin: auto 38px;" src=" https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/800px-Flag_of_the_United_Arab_Emirates.svg.png?20181221104309" alt="">
+      <h6 style="margin: auto 38px;font-size: 30px;text-align: center;padding-top: 30px;font-family: serif;">UAE</h6>
+  </div>
+  <div class="curr-cont" style="height: 40vh;width: 20vw;margin: 30px 0;padding: 10px;">
+    <img height="100vh" style="margin: auto 38px;" src=" https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/2560px-Flag_of_Russia.svg.png" alt="">
+    <h6 style="margin: auto 38px;font-size: 30px;text-align: center;padding-top: 30px;font-family: serif;">RUSSIA</h6>
+</div>
+     </div>
+  </div>
+
+  <div class="seveth-cont" style="background-color: beige;width: 99vw;padding: 30px;display: flex;justify-content: space-around;">
+      <div class="left-side-seven" style="padding: 20px 40px;width: 40vw;">
+        <h1>Disappoint thieves</h1>
+        <p style="margin-top: 20px;">Every month, our customers trust us to move around £9 billion of their money. Here are some of the important ways we protect them.</p>
+        <button style="align-items: center;"  type="button" class="btn btn-success" style="padding: 10px 20px;border-radius: 50px;margin: 20px 0;">How we keep your money safe</button>
+      </div>
+      <div class="right-side-seven">
+        <img width="250px" src="https://wise.com/web-art/assets/illustrations/lock-large@2x.webp" alt="">
+      </div>
+  </div>
+
+
+    
+
+  
+  
+  
+  </div>
+  
+  
