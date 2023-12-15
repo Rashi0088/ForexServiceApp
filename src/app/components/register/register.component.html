@@ -37,50 +37,46 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form class="user">
+                            <form class="user" (ngSubmit)="onSubmit()" >
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input #firstName type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="FirstName">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input #lastName type="text" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Lastname">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input #username type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="Username">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input #tel type="text" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Mobile No.">
+                                        <input type="text" [(ngModel)]="name" class="form-control form-control-user" id="Name" name="name"
+                                            placeholder="Name">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input #email type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                    <input type="text" [(ngModel)]="location" class="form-control form-control-user" id="location" name="location"
+                                        placeholder="Location">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" [(ngModel)]="email" class="form-control form-control-user" id="email" name="email"
                                         placeholder="Email Address">
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input #password type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input #passwordRetype type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Re-type Password">
-                                    </div>
+                                <div class="form-group">
+                                    <input type="password" [(ngModel)]="password" class="form-control form-control-user" id="password" name="password"
+                                        placeholder="Password">
                                 </div>
-                                <!-- <button (click)="register(firstName.value, lastName.value, username.value, tel.value, email.value, password.value, passwordRetype.value)" class="btn btn-primary btn-user btn-block">
+                                <div class="form-group">
+                                    <label for="gender">Gender:</label>
+                                    <select class="form-control" [(ngModel)]="gender" id="gender" name="gender">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" [(ngModel)]="mobileNo" class="form-control form-control-user" id="mobile" name="mobile"
+                                        placeholder="Mobile Number">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-user btn-block" >
                                     Sign Up
                                 </button>
-                                <div *ngIf="registerStatus" class="alert alert-danger">{{ registerStatus }}</div> -->
-
+                                <!-- Add validation or submit functionality here -->
                             </form>
+                            
                           
                             <div class="text-center">
-                                <a class="small" routerLink="'/'">Already have an account? Login!</a>
+                                <a class="small" routerLink="/login">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>

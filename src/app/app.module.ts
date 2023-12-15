@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';  
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,7 +40,17 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule, BrowserAnimationsModule, // required for toastr animations
+    ToastrModule.forRoot({
+      timeOut: 10000,       // Set the duration for which the toast will be displayed (in milliseconds)
+      positionClass: 'toast-bottom-left', // Set the position of the toast
+      preventDuplicates: true, // Prevent duplicate toasts
+      progressBar: true,   // Show a progress bar in the toast
+      closeButton: true,   // Show a close button in the toast
+      // progressBarAnimation: 'increasing', // Set the progress bar animation style
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

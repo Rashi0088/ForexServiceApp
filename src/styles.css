@@ -9,7 +9,45 @@
 
 
 
-
+/* styles.css */
+.toast {
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .toast-success {
+    background-color: #28a745;
+  }
+  
+  .toast-error {
+    background-color: #dc3545;
+  }
+  
+  .toast-info {
+    background-color: #17a2b8;
+  }
+  
+  .toast-warning {
+    background-color: #ffc107;
+  }
+  
+  /* Customize the close button */
+  .toast-close-button {
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  /* Customize the progress bar */
+  .toast-progress {
+    height: 4px;
+    background-color: #007bff;
+  }
+  
 
 
 
