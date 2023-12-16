@@ -2,89 +2,69 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
-
     <title>Login Page</title>
-
-    <!-- Custom fonts for this template-->
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-gradient-primary">
 
-    <div class="container">
-
-        <!-- Outer Row -->
-        <div class="row justify-content-center">
-
-            <div class="col-xl-10 col-lg-12 col-md-9">
-
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
-                        <div class="row" style="padding: 4%;">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image" style="margin: auto;">
-                                <img width="400px" src="https://images.pexels.com/photos/927629/pexels-photo-927629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Login</h1>
-                                    </div>
-                                    <form class="user" (ngSubmit)="onSubmit()">
-                                        <div class="form-group">
-                                            <input type="email" [(ngModel)]="email" class="form-control form-control-user" id="email" name="email"
-                                            placeholder="Email Address">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="password" name="password" placeholder="Password" [(ngModel)]="password">
-                                        </div>
-                                       
-                                        <!-- <button (click)="login(usernameInput.value, passwordInput.value)"  class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </button> -->
-                                        <button type="submit" >Login</button>
-                                        <hr>
-                                        
-                                        <!-- <div *ngIf="loginStatus" class="alert " [ngClass]="loginStatusClass" >{{ loginStatus }}</div> -->
-                                    </form>
-                       
-                                    <div class="text-center">
-                                        <a class="small" [routerLink]="'/register'" >Sign Up</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+    <body class="bg-gradient-primary mt-10">
+    <div
+        class="container mx-auto bg-white rounded-lg shadow-lg p-6 transform transition-transform hover:scale-105 w-full md:w-3/4 lg:w-2/3 xl:w-1/2">
+        <!-- Nested Row within Card Body -->
+        <div class="md:flex">
+            <div class="md:w-1/2 md:flex-none bg-cover bg-center hidden md:block"
+                style="background-image: url('https://images.pexels.com/photos/927629/pexels-photo-927629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
             </div>
-
+            <div class="w-full md:w-1/2 p-4">
+                <div class="text-center">
+                    <h1 class="text-2xl font-bold text-gray-900 mb-4">Login</h1>
+                </div>
+                <form class="user" (ngSubmit)="onSubmit()">
+                    <div class="mb-4">
+                        <input type="email" [(ngModel)]="email"
+                            class="w-full py-3 px-4 bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            id="email" name="email" placeholder="Email Address">
+                    </div>
+                    <div class="mb-4">
+                        <input type="password"
+                            class="w-full py-3 px-4 bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            id="password" name="password" placeholder="Password" [(ngModel)]="password">
+                    </div>
+                    <!-- Gender Field -->
+                    <div class="mb-4">
+                        <label for="role" class="block text-gray-700">Role:</label>
+                        <select
+                            class="w-full py-2 px-3 bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            [(ngModel)]="role" id="role" name="role">
+                            <option value="user">User</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-blue-500 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transform transition-transform hover:scale-105">
+                        Login
+                    </button>
+                    <hr>
+                    <div class="text-center mt-4">
+                        <a class="text-sm text-blue-500 hover:underline" [routerLink]="'/register'">Sign Up</a>
+                    </div>
+                </form>
+            </div>
         </div>
-
     </div>
 
-    
-    <!-- Bootstrap core JavaScript-->
+    <!-- Bootstrap core JavaScript (You may need to update these paths to your actual scripts) -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
+    <!-- Core plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
+    <!-- Custom scripts for all pages -->
     <script src="js/sb-admin-2.min.js"></script>
 
 </body>

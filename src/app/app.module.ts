@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';  
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
@@ -18,15 +18,18 @@ import { TransactionComponent } from './components/transaction/transaction.compo
 import { NavbarComponent } from './navbar/navbar.component';
 
 
-const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: ' ', component: HomeComponent }, 
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'transaction', component: TransactionComponent },
-  // { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirect empty path to login
-  // { path: '**', redirectTo: '/login' },
-]
+// const routes: Routes = [
+//   { path: 'login', component: LoginComponent },
+//   { path: 'register', component: RegisterComponent },
+//   {
+//     path: '', component: NavbarComponent, children: [
+//       { path: '', component: HomeComponent },
+//       { path: 'dashboard', component: DashboardComponent },
+//       { path: 'transaction', component: TransactionComponent },
+//     ]
+//   },
+//   // Add any other routes you may have here
+// ];
 
 
 @NgModule({
@@ -41,6 +44,7 @@ const routes: Routes = [
     NavbarComponent
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -55,6 +59,7 @@ const routes: Routes = [
     }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

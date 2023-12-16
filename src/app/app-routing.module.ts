@@ -5,17 +5,22 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TransactionComponent } from './components/transaction/transaction.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'transaction', component: TransactionComponent },
+ 
+ 
+      { path: '', component: HomeComponent },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'transaction', component: TransactionComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent },
+    
+ 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

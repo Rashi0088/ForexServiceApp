@@ -1,2 +1,290 @@
-<app-navbar></app-navbar>
-<img src="" alt="">
+<div class="forex-website" style="width: 98.5vw;height: 100vh;margin: auto;">
+
+  <div class="container mx-auto mt-2 max-w-7xl"> <!-- Margin-top to push content below the navbar height -->
+
+    <!-- Background Image Container -->
+    <div class="relative rounded-lg shadow-lg w-full h-80 bg-black text-white overflow-hidden group"
+      style="height: 80vh;">
+      <!-- Background Image with Opacity and parallax-like effect -->
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 transform group-hover:scale-105 transition-transform duration-500 ease-in-out"
+        style="background-image: url('../../../assets/bg2.jpg');">
+        <!-- Replace with your image path -->
+      </div>
+
+      <!-- Content Container with a max-width and centered, additional margin for top spacing -->
+      <div class="relative flex flex-col items-center justify-center h-full mx-auto px-4 text-center">
+        <!-- Bouncing Text -->
+        <p class="text-sm uppercase tracking-widest text-shadow z-10 bounce">MONEY FOR HERE ,THERE AND EVERYWHERE</p>
+        <h1 class="text-5xl font-bold my-4 text-shadow z-10 bounce">Worry-free transfers for you and your loved ones </h1>
+        <p class="text-2xl mb-6 text-shadow z-10 bounce">Your Choice Is Simple</p>
+        <!-- ... rest of your content ... -->
+        <a href="#"
+          class="px-6 py-2 border border-transparent text-base font-medium rounded-md text-black bg-yellow-300 hover:bg-yellow-400 md:py-4 md:text-lg md:px-10 transition duration-300 ease-in-out shadow-lg transform hover:scale-110 z-10">
+          Our Services
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <style>
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .bounce {
+      animation: bounce 4s ease-in-out infinite;
+    }
+
+    .text-shadow {
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 1s ease-out;
+    }
+    .card img{
+      height: 183px !important;
+      width: 301px !important;
+      border-radius: 5px;
+    }
+  </style>
+
+
+<!-- ==========================================Second Section=========================================== -->
+
+  <div id="second-part" style="background-color: rgb(238, 238, 238); width: 98.5vw;margin: auto; border-radius: 10px;">
+    <div class="container-second"
+      style="display: flex;justify-content: space-around;align-items: center;padding:20vh 20px;">
+
+      
+      <div class="card" style="width: 18rem;height: 25rem;">
+        <img src="../../../assets/people1.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a style="margin-top: 20px;" href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;height: 25rem;">
+        <img src="../../../assets/people2.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a style="margin-top: 20px;" href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem; height: 25rem;">
+        <img src="../../../assets/people3.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a style="margin-top: 20px;" href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;height: 25rem;">
+        <img src="../../../assets/people4.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a style="margin-top: 20px;" href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- ==========================================Third Section=========================================== -->
+
+<div class="bg-gradient-to-r from-green-400 to-yellow-600 py-4 px-6 md:px-12" style="margin-bottom: 30px;">
+  <div class="flex justify-between items-center max-w-6xl mx-auto">
+      <h2 class="text-xl md:text-2xl text-black font-semibold">
+          Ready to make your first transfer? Create your free account now.
+      </h2>
+      <button
+      (click)="navigateToRegister()"
+          class="bg-blue-800 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+          Sign up now <span aria-hidden="true">›</span>
+      </button>
+  </div>
+</div>
+
+<!-- ==========================================Fourth Section=========================================== -->
+
+<div class="container mx-auto px-4 py-8" style="background-color: rgb(244, 244, 244);padding: 30px 60px;">
+  <h1 class="text-2xl font-semibold mb-6" style="text-align: center;padding-bottom: 20px;">Send money to over many countries (and counting)</h1>
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      <a *ngFor="let country of countries" href="#" class="flex items-center space-x-2">
+          <img [src]="country.flagUrl" [alt]="country.name + ' Flag'" class="w-6 h-4">
+          <span class="text-blue-600 hover:text-blue-800">{{ country.name }}</span>
+      </a>
+  </div>
+</div>
+
+<!-- ==========================================Footer Section=========================================== -->
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted" >
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom" >
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block" style="margin: 20px">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div style="margin: 20px">
+      <a style="font-size: 20px;" href="" class="me-4 text-reset">
+        <!-- <i class="fab fa-facebook-f"></i> -->
+        <i class="ri-facebook-fill"></i>
+      </a>
+      <a style="font-size: 20px;" href="" class="me-4 text-reset">
+        <!-- <i class="fab fa-twitter"></i> -->
+        <i class="ri-twitter-fill"></i>
+      </a>
+      <a style="font-size: 20px;" href="" class="me-4 text-reset">
+        <!-- <i class="fab fa-google"></i> -->
+        <i class="ri-google-fill"></i>
+      </a>
+      <a style="font-size: 20px;" href="" class="me-4 text-reset">
+        <!-- <i class="fab fa-instagram"></i> -->
+        <i class="ri-instagram-line"></i>
+      </a>
+      <a style="font-size: 20px;" href="" class="me-4 text-reset">
+        <!-- <i class="fab fa-linkedin"></i> -->
+        <i class="ri-linkedin-box-fill"></i>
+        
+      </a>
+      <a style="font-size: 20px;" href="" class="me-4 text-reset">
+        <!-- <i class="fab fa-github"></i> -->
+        <i class="ri-github-fill"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Company name
+          </h6>
+          <p>
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Angular</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">React</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Vue</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Laravel</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            info@example.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2023 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">ForexService</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+
+
+
+</div>
+
+
+
+<router-outlet></router-outlet>
