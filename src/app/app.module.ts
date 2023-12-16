@@ -18,6 +18,7 @@ import { TransactionComponent } from './components/transaction/transaction.compo
 import { NavbarComponent } from './navbar/navbar.component';
 import { StoreModule } from '@ngrx/store';
 import { authReducer } from './store/reducer/auth.reducer';
+import { CurrencyConverterComponent } from './components/currency-converter/currency-converter.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { authReducer } from './store/reducer/auth.reducer';
     RegisterComponent,
     DashboardComponent,
     TransactionComponent,
-    NavbarComponent
+    NavbarComponent,
+    CurrencyConverterComponent
   ],
   imports: [
 
