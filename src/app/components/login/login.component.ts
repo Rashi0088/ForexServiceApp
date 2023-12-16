@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Store } from '@ngrx/store';
+import { loginSuccess } from 'src/app/store/actions/auth.action';
+
+import * as authActions from '../../store/actions/auth.action';
 
 @Component({
   selector: 'app-login',
@@ -20,14 +24,14 @@ export class LoginComponent implements OnInit {
 
   email: string = '';
   password: string = '';
-  role: string='';
+  role: string = '';
 
 
   ngOnInit(): void {
 
   }
   // Inject HttpClient in the constructor
-  constructor(private http: HttpClient, private router: Router, private toastr: ToastrService) { }
+  constructor(private http: HttpClient, private router: Router, private toastr: ToastrService, private store: Store<{ user: any }>) { }
 
   // Method to handle form submission
   onSubmit() {
@@ -37,9 +41,9 @@ export class LoginComponent implements OnInit {
       password: this.password,
       role: this.role,
     };
-    if(payload.role==='admin'){
+    if (payload.role === 'admin') {
       console.log(payload);
-      const data={
+      const data = {
         "adminUsername": payload.email,
         "adminPassword": payload.password,
       }
@@ -49,10 +53,18 @@ export class LoginComponent implements OnInit {
         (response) => {
           console.log('API Response:', response);
           this.router.navigate(['/'])
+          console.log('API Response:', response);
+          this.store.dispatch(authActions.loginSuccess({ response: response })); // Dispatch success action
+          this.router.navigate(['/']);
+          this.showSuccess();
           if (response) {
             this.showSuccess();
           }
-  
+          this.store.select('user').subscribe(authState => {
+            // Use authState here
+            console.log(authState);
+          });
+
           // Handle the response as needed (e.g., show a success message, navigate to another page)
         },
         (error) => {
@@ -61,7 +73,7 @@ export class LoginComponent implements OnInit {
           // Handle the error as needed (e.g., show an error message to the user)
         }
       );
-    }else{
+    } else {
       console.log(payload)
       // Make a POST request to your API
       this.http.post('http://localhost:8080/auth/login', payload).subscribe(
@@ -71,7 +83,7 @@ export class LoginComponent implements OnInit {
           if (response) {
             this.showSuccess();
           }
-  
+
           // Handle the response as needed (e.g., show a success message, navigate to another page)
         },
         (error) => {
@@ -81,7 +93,7 @@ export class LoginComponent implements OnInit {
         }
       );
     }
-   
+
   }
 
 

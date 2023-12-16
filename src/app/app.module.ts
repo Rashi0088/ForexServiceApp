@@ -16,20 +16,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TransactionComponent } from './components/transaction/transaction.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
-
-// const routes: Routes = [
-//   { path: 'login', component: LoginComponent },
-//   { path: 'register', component: RegisterComponent },
-//   {
-//     path: '', component: NavbarComponent, children: [
-//       { path: '', component: HomeComponent },
-//       { path: 'dashboard', component: DashboardComponent },
-//       { path: 'transaction', component: TransactionComponent },
-//     ]
-//   },
-//   // Add any other routes you may have here
-// ];
+import { StoreModule } from '@ngrx/store';
+import { authReducer } from './store/reducer/auth.reducer';
 
 
 @NgModule({
@@ -57,6 +45,7 @@ import { NavbarComponent } from './navbar/navbar.component';
       closeButton: true,   // Show a close button in the toast
       // progressBarAnimation: 'increasing', // Set the progress bar animation style
     }),
+    StoreModule.forRoot({ auth: authReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent],

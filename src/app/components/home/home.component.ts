@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 
 interface Country {
   name: string;
@@ -13,9 +14,9 @@ interface Country {
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private store: Store<{ user: any }>) { }
 
   countries: Country[] = [
     { name: "India", flagUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png" },
@@ -37,5 +38,12 @@ export class HomeComponent {
     this.router.navigate(['/register']);
 }
 
+
+ngOnInit() {
+  this.store.select('user').subscribe(authState => {
+    // Use authState here
+    console.log(authState);
+  });
+}
 
 }
