@@ -15,10 +15,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TransactionComponent } from './components/transaction/transaction.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { StoreModule } from '@ngrx/store';
 import { authReducer } from './store/reducer/auth.reducer';
 import { CurrencyConverterComponent } from './components/currency-converter/currency-converter.component';
+import { UserhomeComponent } from './components/userhome/userhome.component';
+import { UserProfileCardComponent } from './components/user-profile-card/user-profile-card.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { CurrencyConverterComponent } from './components/currency-converter/curr
     DashboardComponent,
     TransactionComponent,
     NavbarComponent,
-    CurrencyConverterComponent
+    CurrencyConverterComponent,
+    UserhomeComponent,
+    UserProfileCardComponent
   ],
   imports: [
 

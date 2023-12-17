@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Store } from '@ngrx/store';
 import { loginSuccess } from 'src/app/store/actions/auth.action';
-
 import * as authActions from '../../store/actions/auth.action';
+import { AppState, selectIsLoggedIn, selectUser } from 'src/app/store/selectors/auth.selectors';
 
 @Component({
   selector: 'app-login',
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 
   }
   // Inject HttpClient in the constructor
-  constructor(private http: HttpClient, private router: Router, private toastr: ToastrService, private store: Store<{ user: any }>) { }
+  constructor(private http: HttpClient, private router: Router, private toastr: ToastrService, private store: Store<AppState>) { }
 
   // Method to handle form submission
   onSubmit() {
@@ -52,17 +52,15 @@ export class LoginComponent implements OnInit {
       this.http.post('http://localhost:8080/authen/admin/login', data).subscribe(
         (response) => {
           console.log('API Response:', response);
-          this.router.navigate(['/'])
+          this.router.navigate(['/home'])
           console.log('API Response:', response);
           this.store.dispatch(authActions.loginSuccess({ response: response })); // Dispatch success action
-          this.router.navigate(['/']);
           this.showSuccess();
           if (response) {
             this.showSuccess();
           }
-          this.store.select('user').subscribe(authState => {
-            // Use authState here
-            console.log(authState);
+          this.store.select(selectUser).subscribe(user => {
+            console.log(user)
           });
 
           // Handle the response as needed (e.g., show a success message, navigate to another page)
@@ -79,7 +77,10 @@ export class LoginComponent implements OnInit {
       this.http.post('http://localhost:8080/auth/login', payload).subscribe(
         (response) => {
           console.log('API Response:', response);
-          this.router.navigate(['/'])
+          this.router.navigate(['/home'])
+          console.log('API Response:', response);
+          this.store.dispatch(authActions.loginSuccess({ response: response })); // Dispatch success action
+         
           if (response) {
             this.showSuccess();
           }

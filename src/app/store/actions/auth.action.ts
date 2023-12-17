@@ -11,3 +11,4 @@ export const loginFailure = createAction(
     '[Auth API] Login Failure',
     props<{ error: any }>() // Replace 'any' with the type of your error
 );
+export const logout = createAction('[Auth API] Logout');

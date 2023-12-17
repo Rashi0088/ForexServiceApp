@@ -11,5 +11,6 @@ export const initialState = {
 export const authReducer = createReducer(
     initialState,
     on(AuthActions.loginSuccess, (state, { response }) => ({ ...state, user: response })),
-    on(AuthActions.loginFailure, (state, { error }) => ({ ...state, error }))
+    on(AuthActions.loginFailure, (state, { error }) => ({ ...state, error })),
+    on(AuthActions.logout, () => ({ ...initialState }))
 );

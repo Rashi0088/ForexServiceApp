@@ -1,13 +1,21 @@
-// // src/app/store/selectors/auth.selectors.ts
+import { createSelector } from '@ngrx/store';
 
-// import { createSelector } from '@ngrx/store';
-// import { AppState } from '../state/app.state'; // import your AppState
+export interface AppState {
+    auth: AuthState;
+}
+export interface AuthState {
+    user: any; // replace 'any' with the appropriate type for your user data
+    error: any; // replace 'any' with the appropriate type for your error data
+}
 
-// export const selectAuthState = (state: AppState) => state.auth; // select the auth slice
 
-// export const selectUser = createSelector(
-//   selectAuthState,
-//   (auth) => auth.user
-// );
+export const selectAuthState = (state: AppState) => state.auth;
 
-// // You can define more selectors as needed
+export const selectUser = createSelector(
+    selectAuthState,
+    (state) => state.user
+);
+export const selectIsLoggedIn = createSelector(
+    selectAuthState,
+    (authState: AuthState) => !!authState.user
+);

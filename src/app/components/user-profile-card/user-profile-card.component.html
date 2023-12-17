@@ -1,0 +1,17 @@
+<div *ngIf="user$ | async as user"
+    class="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden md:max-w-2xl animate-fade-in-up">
+    <div class="md:flex">
+        <div class="md:flex-shrink-0">
+            <img class="h-48 w-full object-cover md:w-48" src="{{user.imageUrl}}" alt="User Image">
+        </div>
+        <div class="p-8">
+            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Profile</div>
+            <a href="#"
+                class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{{user.name}}</a>
+            <p class="mt-2 text-gray-500">{{user.location}}</p>
+            <p class="mt-2 text-gray-500">{{user.email}}</p>
+            <p class="mt-2 text-gray-500">{{user.gender}}</p>
+            <p class="mt-2 text-gray-500">{{user.mobile}}</p>
+        </div>
+    </div>
+</div>
