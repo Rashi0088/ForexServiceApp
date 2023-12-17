@@ -8,6 +8,8 @@ import { TransactionComponent } from './components/transaction/transaction.compo
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserhomeComponent } from './components/userhome/userhome.component';
 import { UserProfileCardComponent } from './components/user-profile-card/user-profile-card.component';
+import { AddBankAccountComponent } from './components/add-bank-account/add-bank-account.component';
+import { UserBankDetailsComponent } from './components/user-bank-details/user-bank-details.component';
 
 const routes: Routes = [
 
@@ -19,8 +21,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: UserhomeComponent },
   { path: 'userProfile', component: UserProfileCardComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '', redirectTo: '/userProfile', pathMatch: 'full' }
+  { path: 'bankDetails', component: UserBankDetailsComponent },
+  // { path: '', redirectTo: '/home', pathMatch: 'full' },
+  // { path: '', redirectTo: '/userProfile', pathMatch: 'full' }
 
 
 ];

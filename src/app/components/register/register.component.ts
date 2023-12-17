@@ -2,6 +2,8 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +20,7 @@ export class RegisterComponent {
   gender: string = '';
 
   // Inject HttpClient in the constructor
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private toastr: ToastrService) { }
 
   // Method to handle form submission
   onSubmit() {
@@ -36,12 +38,24 @@ export class RegisterComponent {
     this.http.post('http://localhost:8080/users/save', payload).subscribe(
       (response) => {
         console.log('API Response:', response);
-        this.router.navigate(['/login']); 
-        // Handle the response as needed (e.g., show a success message, navigate to another page)
+        this.router.navigate(['/login']);
+        
+        // Show SweetAlert on successful registration
+        Swal.fire({
+          icon: 'success',
+          title: 'Registration Successful!',
+          text: 'You have successfully registered.',
+        });
       },
       (error) => {
         console.error('API Error:', error);
-        // Handle the error as needed (e.g., show an error message to the user)
+
+        // Show SweetAlert on registration error
+        Swal.fire({
+          icon: 'error',
+          title: 'Registration Failed',
+          text: 'An error occurred during registration. Please try again later.',
+        });
       }
     );
   }

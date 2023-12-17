@@ -18,6 +18,20 @@ export class CurrencyConverterComponent {
   selectedFromCurrency: string = 'USD'; // Default selection
   selectedToCurrency: string = 'INR'; // Default selection
   currencyList: string[] = []; // Will hold the list of currencies
+  baseFee: number = 0; // Base fee for the transaction
+  totalFees: number = 0; // Total of all fees
+  rate: number = 0; // The exchange rate used for the conversion
+  deliveryDate: string = ''; // Expected delivery date
+  baseFeePercent: number = 0.5; // Hypothetical percentage fee for the transaction
+  fixedFee: number = 1.50;
+  baseFeeRate: number = 0.01; // Example base fee rate (1%)
+
+  fixedFees: { [key: string]: number } = {
+    'USD': 1.00,
+    'EUR': 0.50,
+    'INR': 50.00,
+    // Add fixed fees for other currencies as required
+  };
 
   constructor(private http: HttpClient) {
     this.loadCurrencyList();
@@ -47,27 +61,49 @@ export class CurrencyConverterComponent {
   }
 
 
+  // calculate() {
+  //   this.getExchangeRate(this.selectedFromCurrency, this.selectedToCurrency).subscribe(
+  //     rate => {
+  //       this.exchangeRate = rate;
+  //       console.log(rate);
+  //       this.fees = this.calculateFees(this.amountToSend);
+  //       const amountReceived = (this.amountToSend - this.fees) * this.exchangeRate;
+  //       this.amountReceived = +amountReceived.toFixed(2);
+  //       this.calculateSavings(); // Call a method to calculate savings
+  //     },
+  //     error => {
+  //       console.error('Error fetching exchange rate', error);
+  //     }
+  //   );
+  // }
   calculate() {
     this.getExchangeRate(this.selectedFromCurrency, this.selectedToCurrency).subscribe(
       rate => {
         this.exchangeRate = rate;
-        console.log(rate);
-        this.fees = this.calculateFees(this.amountToSend);
-        const amountReceived = (this.amountToSend - this.fees) * this.exchangeRate;
-        this.amountReceived = +amountReceived.toFixed(2);
-        this.calculateSavings(); // Call a method to calculate savings
+        // Calculate fees based on the exchange rate and amount
+        this.baseFee = this.calculateBaseFee(this.amountToSend);
+        this.fixedFee = this.fixedFees[this.selectedFromCurrency] || 0;
+        this.totalFees = this.baseFee + this.fixedFee;
+        // Calculate the total amount to convert and the amount the recipient will get
+        this.amountReceived = (this.amountToSend - this.totalFees) * this.exchangeRate;
+        // Call method to calculate savings (if applicable)
+        this.calculateSavings();
       },
       error => {
         console.error('Error fetching exchange rate', error);
       }
     );
   }
-
-  calculateFees(amount: number): number {
-    // ... fee calculation logic
-    const fees = amount * 0.0074;
-    return +fees.toFixed(2);
+  calculateBaseFee(amount: number): number {
+    // Calculate the base fee as a percentage of the amount being sent
+    return amount * this.baseFeeRate;
   }
+  // calculateFees(amount: number): number {
+  //   const key = `${this.selectedFromCurrency}-${this.selectedToCurrency}`;
+  //   const feePercentage = this.feesConfig[key] || 0.01; // Default fee percentage
+  //   const fees = amount * feePercentage;
+  //   return +fees.toFixed(2);
+  // }
   calculateSavings() {
     // Implement your logic to calculate savings here
     // For example, compare with a standard rate and determine the difference

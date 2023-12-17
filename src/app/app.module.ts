@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
-
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +19,9 @@ import { authReducer } from './store/reducer/auth.reducer';
 import { CurrencyConverterComponent } from './components/currency-converter/currency-converter.component';
 import { UserhomeComponent } from './components/userhome/userhome.component';
 import { UserProfileCardComponent } from './components/user-profile-card/user-profile-card.component';
+import { AddBankAccountComponent } from './components/add-bank-account/add-bank-account.component';
+import { UserBankDetailsComponent } from './components/user-bank-details/user-bank-details.component';
+import { popupReducer } from './store/reducer/popup.reducer';
 
 
 @NgModule({
@@ -35,23 +36,21 @@ import { UserProfileCardComponent } from './components/user-profile-card/user-pr
     NavbarComponent,
     CurrencyConverterComponent,
     UserhomeComponent,
-    UserProfileCardComponent
+    UserProfileCardComponent,
+    AddBankAccountComponent,
+    UserBankDetailsComponent,
+
+
   ],
   imports: [
 
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule, BrowserAnimationsModule, // required for toastr animations
-    ToastrModule.forRoot({
-      timeOut: 10000,       // Set the duration for which the toast will be displayed (in milliseconds)
-      positionClass: 'toast-bottom-left', // Set the position of the toast
-      preventDuplicates: true, // Prevent duplicate toasts
-      progressBar: true,   // Show a progress bar in the toast
-      closeButton: true,   // Show a close button in the toast
-      // progressBarAnimation: 'increasing', // Set the progress bar animation style
-    }),
-    StoreModule.forRoot({ auth: authReducer }),
+    HttpClientModule, 
+    BrowserAnimationsModule, // required for toastr animations
+    StoreModule.forRoot({ auth: authReducer, popup: popupReducer }),
+
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,17 +1,18 @@
-<nav class="bg-gray-800">
+<nav class="bg-gray-800 fixed top-0 w-full z-10" style="z-index: 999;">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
       <!-- Left Side - Logo -->
       <div class="flex items-center ml-4">
-        <a href="#" class="text-white text-lg font-semibold">ForexService</a>
+        <a routerLink="/" class="text-white text-lg font-semibold">ForexService</a>
       </div>
 
       <!-- Right Side - Conditional Links -->
       <div *ngIf="(isLoggedIn$ | async)" class="ml-auto flex items-center space-x-4">
         <!-- Logged In: Display 'Send Money', 'Add Bank Accounts', Notification Icon, and User Menu -->
-        <a href="sendMoney" class="text-white hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium">Send Money</a>
-        <a href="addBankAccounts" class="text-white hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium">Add Bank
-          Accounts</a>
+        <a routerLink="sendMoney" class="text-white hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium">Send
+          Money</a>
+        <a routerLink="bankDetails" class="text-white hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium">Bank
+          Details</a>
 
         <!-- Notification Icon -->
         <button type="button"
@@ -32,18 +33,17 @@
             class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
             <span class="absolute -inset-1.5"></span>
             <span class="sr-only">Open user menu</span>
-            <img class="h-8 w-8 rounded-full"
-              src="../../../assets/people1.png"
-              alt="">
+            <img class="h-8 w-8 rounded-full" src="../../../assets/people1.png" alt="">
           </button>
           <!-- User Menu Dropdown -->
           <div
             class="absolute right-0 mt-2 w-48 rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1"
             [ngClass]="{'hidden': !isUserMenuOpen}">
-            <a href="userProfile" class="block px-4 py-2 text-sm text-gray-700">Your Profile</a>
-            <a href="settings" class="block px-4 py-2 text-sm text-gray-700">Settings</a>
-            <a href="/" (click)="logout()" class="block px-4 py-2 text-sm text-gray-700">Sign out</a>
+            <a routerLink="userProfile" class="block px-4 py-2 text-sm text-gray-700" (click)="toggleUserMenu()">Your
+              Profile</a>
+            <a routerLink=" settings" class="block px-4 py-2 text-sm text-gray-700">Settings</a>
+            <a routerLink="/" (click)="logout()" class="block px-4 py-2 text-sm text-gray-700">Sign out</a>
           </div>
         </div>
       </div>
@@ -51,9 +51,11 @@
       <!-- Display for Non-Logged-In Users -->
       <div *ngIf="!(isLoggedIn$ | async)" class="ml-auto">
         <div class="flex space-x-4">
-          <a href="login" class="text-white hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium">Login</a>
-          <a href="register" class="text-white hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium">Register</a>
-          <a href="aboutUs" class="text-white hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium">About Us</a>
+          <a routerLink="login" class="text-white hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium">Login</a>
+          <a routerLink="register"
+            class="text-white hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium">Register</a>
+          <a routerLink="aboutUs" class="text-white hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium">About
+            Us</a>
         </div>
       </div>
     </div>

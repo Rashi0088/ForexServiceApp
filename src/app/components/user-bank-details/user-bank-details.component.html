@@ -1,0 +1,31 @@
+<div class="container mx-auto p-4" style="margin-top: 50px;">
+    <button class="mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        (click)="openAddBankDetailsPopup()">
+        Add Bank Account
+    </button>
+
+    <table class="table-auto w-full">
+        <thead>
+            <tr class="bg-gray-200">
+                <th class="px-4 py-2">Account Holder</th>
+                <th class="px-4 py-2">Account Number</th>
+                <th class="px-4 py-2">Bank Name</th>
+                <th class="px-4 py-2">IFSC Code</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr class="bg-gray-100" *ngFor="let account of accounts">
+                <td class="border px-4 py-2">{{ account.accountHolderName }}</td>
+                <td class="border px-4 py-2">{{ account.accountNumber }}</td>
+                <td class="border px-4 py-2">{{ account.bankName }}</td>
+                <td class="border px-4 py-2">{{ account.ifscCode }}</td>
+        
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="isAddBankDetailsPopupOpen" class="popup-container">
+        <app-add-bank-account></app-add-bank-account>
+        <button (click)="closeAddBankDetailsPopup()">Close Popup</button>
+    </div>
+</div>
