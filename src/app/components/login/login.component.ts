@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
       this.http.post('http://localhost:8080/authen/admin/login', data).subscribe(
         (response) => {
           console.log('API Response:', response);
-          this.router.navigate(['/home']);
+          this.router.navigate(['/admindash']);
           this.store.dispatch(authActions.loginSuccess({ response: response }));
           this.showSuccess();
           if (response) {

@@ -22,6 +22,8 @@ import { UserProfileCardComponent } from './components/user-profile-card/user-pr
 import { AddBankAccountComponent } from './components/add-bank-account/add-bank-account.component';
 import { UserBankDetailsComponent } from './components/user-bank-details/user-bank-details.component';
 import { popupReducer } from './store/reducer/popup.reducer';
+import { AdminRateComponent } from './components/admin-rate/admin-rate.component';
+import { UpdateCurrencyComponent } from './components/update-currency/update-currency.component';
 
 
 @NgModule({
@@ -39,6 +41,8 @@ import { popupReducer } from './store/reducer/popup.reducer';
     UserProfileCardComponent,
     AddBankAccountComponent,
     UserBankDetailsComponent,
+    AdminRateComponent,
+    UpdateCurrencyComponent,
 
 
   ],

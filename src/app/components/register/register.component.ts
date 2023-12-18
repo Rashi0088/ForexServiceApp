@@ -2,7 +2,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -20,7 +19,7 @@ export class RegisterComponent {
   gender: string = '';
 
   // Inject HttpClient in the constructor
-  constructor(private http: HttpClient, private router: Router, private toastr: ToastrService) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   // Method to handle form submission
   onSubmit() {

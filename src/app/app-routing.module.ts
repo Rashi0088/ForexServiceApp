@@ -10,6 +10,8 @@ import { UserhomeComponent } from './components/userhome/userhome.component';
 import { UserProfileCardComponent } from './components/user-profile-card/user-profile-card.component';
 import { AddBankAccountComponent } from './components/add-bank-account/add-bank-account.component';
 import { UserBankDetailsComponent } from './components/user-bank-details/user-bank-details.component';
+import { AdminRateComponent } from './components/admin-rate/admin-rate.component';
+import { UpdateCurrencyComponent } from './components/update-currency/update-currency.component';
 
 const routes: Routes = [
 
@@ -18,10 +20,12 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'transaction', component: TransactionComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'admindash', component: AdminRateComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: UserhomeComponent },
   { path: 'userProfile', component: UserProfileCardComponent },
   { path: 'bankDetails', component: UserBankDetailsComponent },
+  { path: 'updatecurrency', component: UpdateCurrencyComponent },
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
   // { path: '', redirectTo: '/userProfile', pathMatch: 'full' }
 
