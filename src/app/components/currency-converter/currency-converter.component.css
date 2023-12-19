@@ -1,0 +1,8 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 4rem; /* Height of the navbar */
+    margin-left: 20rem; /* Width of the sidebar */
+    width: auto;
+  }

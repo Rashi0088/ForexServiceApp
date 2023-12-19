@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { AppState, selectIsLoggedIn } from '../../store/selectors/auth.selectors';
+import { Store } from '@ngrx/store';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-currency-converter',
@@ -10,6 +13,8 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./currency-converter.component.css']
 })
 export class CurrencyConverterComponent {
+  isLoggedIn$: Observable<boolean>;
+
   amountToSend: number = 0;
   exchangeRate: number = 0;
   fees: number = 0;
@@ -33,10 +38,19 @@ export class CurrencyConverterComponent {
     // Add fixed fees for other currencies as required
   };
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private store: Store<AppState>, private router: Router) {
     this.loadCurrencyList();
+    this.isLoggedIn$ = this.store.select(selectIsLoggedIn);
   }
-
+  getStarted() {
+    this.isLoggedIn$.subscribe(isLoggedIn => {
+      if (isLoggedIn) {
+        this.router.navigate(['/home']);
+      } else {
+        this.router.navigate(['/login']);
+      }
+    });
+  }
   loadCurrencyList() {
     // Load your currency list here, possibly from an API or a static list
     this.currencyList = ['USD', 'EUR', 'INR']; // Example static list
@@ -61,21 +75,6 @@ export class CurrencyConverterComponent {
   }
 
 
-  // calculate() {
-  //   this.getExchangeRate(this.selectedFromCurrency, this.selectedToCurrency).subscribe(
-  //     rate => {
-  //       this.exchangeRate = rate;
-  //       console.log(rate);
-  //       this.fees = this.calculateFees(this.amountToSend);
-  //       const amountReceived = (this.amountToSend - this.fees) * this.exchangeRate;
-  //       this.amountReceived = +amountReceived.toFixed(2);
-  //       this.calculateSavings(); // Call a method to calculate savings
-  //     },
-  //     error => {
-  //       console.error('Error fetching exchange rate', error);
-  //     }
-  //   );
-  // }
   calculate() {
     this.getExchangeRate(this.selectedFromCurrency, this.selectedToCurrency).subscribe(
       rate => {
@@ -98,16 +97,8 @@ export class CurrencyConverterComponent {
     // Calculate the base fee as a percentage of the amount being sent
     return amount * this.baseFeeRate;
   }
-  // calculateFees(amount: number): number {
-  //   const key = `${this.selectedFromCurrency}-${this.selectedToCurrency}`;
-  //   const feePercentage = this.feesConfig[key] || 0.01; // Default fee percentage
-  //   const fees = amount * feePercentage;
-  //   return +fees.toFixed(2);
-  // }
+
   calculateSavings() {
-    // Implement your logic to calculate savings here
-    // For example, compare with a standard rate and determine the difference
-    // This is just a placeholder logic
     const standardRate = 85; // Placeholder for a standard rate
     const potentialSavings = (this.amountToSend * standardRate) - this.amountReceived;
     this.savings = potentialSavings > 0 ? +potentialSavings.toFixed(2) : 0;

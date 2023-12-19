@@ -1,0 +1,57 @@
+<aside class="w-64 h-screen bg-gray-800 text-white fixed" style="top: 4rem;">
+    <ul class="space-y-2 p-2">
+        <li>
+            <button (click)="toggleUserProfile()"
+                class="flex items-center p-2 w-full text-left hover:bg-gray-700 rounded transition duration-200 ease-in-out focus:outline-none focus:bg-gray-700">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V5l12-2v14"></path>
+                </svg>
+                Your Profile
+            </button>
+        </li>
+        <li>
+            <button (click)="toggleUserProfile()" class=" flex items-center p-2 w-full text-left hover:bg-gray-700 rounded transition duration-200
+                ease-in-out focus:outline-none focus:bg-gray-700">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V5l12-2v14"></path>
+                </svg>
+                Generate Report
+            </button>
+        </li>
+        <li>
+            <button (click)="toggleBankDetail()"
+                class="flex items-center p-2 w-full text-left hover:bg-gray-700 rounded transition duration-200 ease-in-out focus:outline-none focus:bg-gray-700">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3v18h18V3H3z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18"></path>
+                </svg>
+                Bank Details
+            </button>
+        </li>
+        <li>
+            <button (click)="toggleSendMoneyFeature()"
+                class="flex items-center p-2 w-full text-left hover:bg-gray-700 rounded transition duration-200 ease-in-out focus:outline-none focus:bg-gray-700">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3">
+                    </path>
+                </svg>
+                Send Money
+            </button>
+        </li>
+        <li>
+            <button
+                class="flex items-center p-2 w-full text-left hover:bg-gray-700 rounded transition duration-200 ease-in-out focus:outline-none focus:bg-gray-700">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7">
+                    </path>
+                </svg>
+                Logout
+            </button>
+        </li>
+    </ul>
+</aside>

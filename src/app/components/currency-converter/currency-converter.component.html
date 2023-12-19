@@ -1,8 +1,8 @@
-<div class="p-4 max-w-xl mx-auto">
+<div class="p-4 max-w-xl mx-auto sm:max-w-md">
     <div class="bg-white shadow rounded-lg overflow-hidden">
 
         <!-- Currency Selection -->
-        <div class="px-8 pt-6">
+        <div class="px-4 pt-6 sm:px-2">
             <div class="mb-2">
                 <label for="fromCurrency" class="block text-gray-700 text-sm font-bold mb-2">
                     From Currency
@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <div class="px-8 pt-6">
+        <div class="px-4 pt-6 sm:px-2">
             <div class="mb-2">
                 <label for="toCurrency" class="block text-gray-700 text-sm font-bold mb-2">
                     To Currency
@@ -31,7 +31,7 @@
         </div>
 
         <!-- Amount to Send Input -->
-        <div class="px-8 pt-6">
+        <div class="px-4 pt-6 sm:px-2">
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="amount">
                     You send exactly
@@ -42,37 +42,32 @@
                     (input)="calculate()">
             </div>
         </div>
-        <div class="px-8 py-6 bg-gray-100">
 
-            <!-- Fee and Exchange Rate Display -->
+        <!-- Fee and Exchange Rate Display -->
+        <div class="px-4 py-6 sm:px-2 bg-gray-100">
             <div class="flex justify-between items-center mb-3">
                 <div class="text-sm text-gray-600">Base Fee</div>
                 <div class="text-sm font-bold text-gray-600">
                     {{ baseFee | currency:selectedFromCurrency }}
                 </div>
             </div>
-            <div class="flex justify-between items-center">
-                <div class="flex justify-between items-center mb-3">Fixed Fee</div>
+            <div class="flex justify-between items-center mb-3">
+                <div class="text-sm text-gray-600">Fixed Fee</div>
                 <div class="text-sm font-bold text-gray-600">{{ fixedFee | currency:selectedFromCurrency }}</div>
             </div>
             <div class="flex justify-between items-center mb-3">
                 <div class="text-sm text-gray-600">= Total Amount We'll Convert</div>
-                <div class="text-sm font-bold text-gray-600">{{ amountToSend - totalFees | currency:selectedFromCurrency
-                    }}</div>
+                <div class="text-sm font-bold text-gray-600">{{ amountToSend - totalFees |
+                    currency:selectedFromCurrency }}</div>
             </div>
             <div class="flex justify-between items-center mb-3">
                 <div class="text-sm text-gray-600">× Exchange Rate</div>
                 <div class="text-sm font-bold text-gray-600">{{ exchangeRate }}</div>
             </div>
         </div>
-        <!-- <div class="flex justify-between items-center">
-            <div class="text-sm text-gray-600">Recipient Gets</div>
-            <div class="text-sm font-bold text-gray-600">{{ amountReceived | currency:selectedToCurrency }}</div>
-        </div> -->
-
 
         <!-- Amount Received Input -->
-        <div class="px-8 py-6">
+        <div class="px-4 py-6 sm:px-2">
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="recipientGets">
                     Recipient gets
@@ -88,18 +83,16 @@
                 </div>
             </div>
         </div>
-        <div class="px-8 pb-8">
+
+        <div class="px-4 pb-8 sm:px-2">
             <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-                <!-- <button
-                    class="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1">
-                    Compare price
-                </button> -->
                 <button
-                routerLink="/login"
-                    class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 sm:text-sm"
+                    (click)="getStarted()">
                     Get started
                 </button>
             </div>
         </div>
+
     </div>
 </div>

@@ -24,6 +24,7 @@ import { UserBankDetailsComponent } from './components/user-bank-details/user-ba
 import { popupReducer } from './store/reducer/popup.reducer';
 import { AdminRateComponent } from './components/admin-rate/admin-rate.component';
 import { UpdateCurrencyComponent } from './components/update-currency/update-currency.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { UpdateCurrencyComponent } from './components/update-currency/update-cur
     UserBankDetailsComponent,
     AdminRateComponent,
     UpdateCurrencyComponent,
+    SidebarComponent,
 
 
   ],

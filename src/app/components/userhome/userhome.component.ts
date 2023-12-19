@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./userhome.component.css']
 })
 export class UserhomeComponent {
-
+  showUserProfile = false;
+  toggleBankDetails = false;
+  showSendMoney = false;  // New property
 }

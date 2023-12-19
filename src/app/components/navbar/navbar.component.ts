@@ -20,7 +20,7 @@ export class NavbarComponent {
   }
   logout() {
     this.store.dispatch(AuthActions.logout());
-    this.router.navigate(['/home'])
+    this.router.navigate(['/'])
   }
   toggleUserMenu() {
     this.isUserMenuOpen = !this.isUserMenuOpen;
