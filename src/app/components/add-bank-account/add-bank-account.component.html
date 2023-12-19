@@ -1,35 +1,58 @@
-<div class="flex justify-center items-center p-6">
-    <div class="bg-white rounded-lg shadow-lg p-8 m-4 max-w-xl w-full">
-        <h1 class="text-center text-gray-800 text-2xl font-bold mb-6">Add Bank Account</h1>
-        <form (ngSubmit)="addBankAccount()">
-            <div class="flex flex-col mb-4">
-                <label class="mb-2 font-bold text-lg text-gray-900" for="accountNumber">Account Number</label>
-                <input class="border py-2 px-3 text-grey-800" type="text" name="accountNumber" id="accountNumber"
-                    [(ngModel)]="bankAccount.accountNumber">
-            </div>
-            <div class="flex flex-col mb-4">
-                <label class="mb-2 font-bold text-lg text-gray-900" for="accountHolderName">Account Holder's
-                    Name</label>
-                <input class="border py-2 px-3 text-grey-800" type="text" name="accountHolderName"
-                    id="accountHolderName" [(ngModel)]="bankAccount.accountHolderName">
-            </div>
-            <div class="flex flex-col mb-4">
-                <label class="mb-2 font-bold text-lg text-gray-900" for="bankName">Bank Name</label>
-                <input class="border py-2 px-3 text-grey-800" type="text" name="bankName" id="bankName"
-                    [(ngModel)]="bankAccount.bankName">
-            </div>
-            <div class="flex flex-col mb-4">
-                <label class="mb-2 font-bold text-lg text-gray-900" for="ifscCode">IFSC Code</label>
-                <input class="border py-2 px-3 text-grey-800" type="text" name="ifscCode" id="ifscCode"
-                    [(ngModel)]="bankAccount.ifscCode">
-            </div>
-            <div class="flex flex-col mb-6">
-                <label class="mb-2 font-bold text-lg text-gray-900" for="contactNumber">Contact Number</label>
-                <input class="border py-2 px-3 text-grey-800" type="text" name="contactNumber" id="contactNumber"
-                    [(ngModel)]="bankAccount.contactNumber">
-            </div>
-            <button class="block bg-blue-500 hover:bg-blue-700 text-white uppercase text-lg mx-auto p-4 rounded"
-                type="submit">Add Account</button>
-        </form>
+<!-- add-bank-account.component.html -->
+<div class="max-w-md mx-auto my-8 p-6 bg-white rounded-md shadow-md">
+    <div class="flex justify-between items-center p-2 bg-gray-800 text-white rounded-t-md mb-4">
+        <span class="font-bold text-lg">Add Bank Account</span>
+        <button (click)="closeAddBankDetailsPopup()" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                </path>
+            </svg>
+        </button>
     </div>
+    <!-- <h2 class="text-2xl font-semibold mb-4">Add Bank Account</h2> -->
+
+    <!-- ... existing code ... -->
+    <form class="grid grid-cols-2 gap-4">
+        <!-- Account Number -->
+        <div class="mb-4">
+            <label for="accountNumber" class="block text-sm font-medium text-gray-600">Account Number</label>
+            <input type="text" id="accountNumber" name="accountNumber" [(ngModel)]="bankAccount.accountNumber"
+                class="mt-1 p-2 w-full border rounded-md">
+        </div>
+
+        <!-- Account Holder's Name -->
+        <div class="mb-4">
+            <label for="accountHolderName" class="block text-sm font-medium text-gray-600">Account Holder's Name</label>
+            <input type="text" id="accountHolderName" name="accountHolderName"
+                [(ngModel)]="bankAccount.accountHolderName" class="mt-1 p-2 w-full border rounded-md">
+        </div>
+
+        <!-- Bank Name -->
+        <div class="mb-4">
+            <label for="bankName" class="block text-sm font-medium text-gray-600">Bank Name</label>
+            <input type="text" id="bankName" name="bankName" [(ngModel)]="bankAccount.bankName"
+                class="mt-1 p-2 w-full border rounded-md">
+        </div>
+
+        <!-- IFSC Code -->
+        <div class="mb-4">
+            <label for="ifscCode" class="block text-sm font-medium text-gray-600">IFSC Code</label>
+            <input type="text" id="ifscCode" name="ifscCode" [(ngModel)]="bankAccount.ifscCode"
+                class="mt-1 p-2 w-full border rounded-md">
+        </div>
+
+        <!-- Contact -->
+        <div class="mb-4">
+            <label for="contact" class="block text-sm font-medium text-gray-600">Contact</label>
+            <input type="text" id="contact" name="contact" [(ngModel)]="bankAccount.contactNumber"
+                class="mt-1 p-2 w-full border rounded-md">
+        </div>
+
+        <button type="button" (click)="addBankAccount()"
+            class="col-span-2 bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600">Add
+            Account</button>
+    </form>
+    <!-- ... existing code ... -->
+
 </div>

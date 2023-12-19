@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AppState, selectUser } from 'src/app/store/selectors/auth.selectors';
 import { Store } from '@ngrx/store';
-
 
 @Component({
   selector: 'app-add-bank-account',
@@ -19,6 +18,8 @@ export class AddBankAccountComponent {
     contactNumber: ''
   };
 
+  @Output() popupStateChanged = new EventEmitter<boolean>();
+  @Output() bankAccountAdded = new EventEmitter<boolean>();
   constructor(private http: HttpClient, private store: Store<AppState>) {
     // Subscribe to the user object from the Redux store
     this.store.select(selectUser).subscribe(user => {
@@ -28,13 +29,18 @@ export class AddBankAccountComponent {
     });
   }
 
+  closeAddBankDetailsPopup() {
+    this.popupStateChanged.emit(false);
+    this.bankAccountAdded.emit(true);
+  }
+
   addBankAccount() {
     // Ensure userID is not null or handle it accordingly
-    console.log(this.bankAccount)
     if (this.bankAccount.userId) {
       this.http.post('http://localhost:8080/UserBankDetails/save', this.bankAccount)
         .subscribe(response => {
           console.log('Bank account added:', response);
+          this.closeAddBankDetailsPopup(); // Close the popup after adding an account
           // handle response here
         }, error => {
           console.error('Error adding bank account:', error);
