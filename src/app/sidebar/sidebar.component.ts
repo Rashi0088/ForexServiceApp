@@ -7,32 +7,43 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class SidebarComponent {
   @Output() toggleProfile = new EventEmitter<boolean>();
+  @Output() toggleGenerateReport = new EventEmitter<boolean>(); // New output for generate report
   @Output() toggleBankDetails = new EventEmitter<boolean>();
-  @Output() toggleSendMoney = new EventEmitter<boolean>();  // New event emitter
+  @Output() toggleSendMoney = new EventEmitter<boolean>();
+  // New event emitter
 
   private isProfileVisible = false;
   private isBankDetailVisible = false;
   private isSendMoneyVisible = false;  // New property
 
   toggleUserProfile() {
-    this.isProfileVisible = true;
-    this.isBankDetailVisible = false;
-    this.isSendMoneyVisible = false;
-    this.emitEvents();
+    this.toggleProfile.emit(true);
+    // Set other properties to false to hide other components
+    this.toggleGenerateReport.emit(false);
+    this.toggleBankDetails.emit(false);
+    this.toggleSendMoney.emit(false);
   }
-
+  toggleReport() {
+    this.toggleGenerateReport.emit(true);
+    // Set other properties to false to hide other components
+    this.toggleProfile.emit(false);
+    this.toggleBankDetails.emit(false);
+    this.toggleSendMoney.emit(false);
+  }
   toggleBankDetail() {
-    this.isBankDetailVisible = true;
-    this.isProfileVisible = false;
-    this.isSendMoneyVisible = false;
-    this.emitEvents();
+    this.toggleGenerateReport.emit(false);
+    // Set other properties to false to hide other components
+    this.toggleProfile.emit(false);
+    this.toggleBankDetails.emit(true);
+    this.toggleSendMoney.emit(false);
   }
 
   toggleSendMoneyFeature() {
-    this.isSendMoneyVisible = true;
-    this.isProfileVisible = false;
-    this.isBankDetailVisible = false;
-    this.emitEvents();
+    this.toggleGenerateReport.emit(false);
+    // Set other properties to false to hide other components
+    this.toggleProfile.emit(false);
+    this.toggleBankDetails.emit(false);
+    this.toggleSendMoney.emit(true);
   }
 
   private emitEvents() {
@@ -40,5 +51,4 @@ export class SidebarComponent {
     this.toggleBankDetails.emit(this.isBankDetailVisible);
     this.toggleSendMoney.emit(this.isSendMoneyVisible);
   }
-  
 }

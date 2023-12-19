@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class UserhomeComponent {
   showUserProfile = false;
+  showGenerateReport = false; // New property for generate report
   toggleBankDetails = false;
-  showSendMoney = false;  // New property
+  showSendMoney = false;
 }

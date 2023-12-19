@@ -1,7 +1,10 @@
 <div class="flex">
-  <app-sidebar (toggleProfile)="showUserProfile = $event" (toggleBankDetails)="toggleBankDetails = $event"
-    (toggleSendMoney)="showSendMoney = $event"></app-sidebar>
+  <app-sidebar (toggleProfile)="showUserProfile = $event" (toggleGenerateReport)="showGenerateReport = $event"
+    (toggleBankDetails)="toggleBankDetails = $event" (toggleSendMoney)="showSendMoney = $event">
+  </app-sidebar>
+
   <app-user-profile-card *ngIf="showUserProfile"></app-user-profile-card>
+  <app-generate-report *ngIf="showGenerateReport"></app-generate-report> <!-- Generate Report Component -->
   <app-user-bank-details *ngIf="toggleBankDetails"></app-user-bank-details>
   <app-currency-converter *ngIf="showSendMoney" class="currency-container"></app-currency-converter>
 </div>

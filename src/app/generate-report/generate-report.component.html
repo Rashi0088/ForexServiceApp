@@ -1,1 +1,47 @@
-<p>generate-report works!</p>
+
+<div class="pl-72 pt-16 pr-4 pb-4"> <!-- Adjust padding to fit alongside the sidebar and navbar -->
+    <div class=" overflow-x-auto">
+        <table class="min-w-full table-auto border-collapse border border-gray-300 text-sm"> <!-- Reduced font size -->
+            <thead class="bg-gray-200"> <!-- Background color for the header -->
+                <tr>
+                    <th class="border border-gray-300 px-4 py-2">Transaction ID</th>
+                    <th class="border border-gray-300 px-4 py-2">From Country</th>
+                    <th class="border border-gray-300 px-4 py-2">To Country</th>
+                    <th class="border border-gray-300 px-4 py-2">Sender Name</th>
+                    <th class="border border-gray-300 px-4 py-2">Sender Account No</th>
+                    <th class="border border-gray-300 px-4 py-2">Receiving Amount</th>
+                    <th class="border border-gray-300 px-4 py-2">Sending Currency</th>
+                    <th class="border border-gray-300 px-4 py-2">Receiver Name</th>
+                    <th class="border border-gray-300 px-4 py-2">Receiver Account No</th>
+                    <th class="border border-gray-300 px-4 py-2">Receiving Currency</th>
+                    <th class="border border-gray-300 px-4 py-2">Total Amount</th>
+                    <th class="border border-gray-300 px-4 py-2">Transaction Date</th>
+                    <th class="border border-gray-300 px-4 py-2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let transaction of transactions">
+                    <td class="border border-gray-300 px-4 py-2">{{ transaction.transactionId }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ transaction.fromCountry }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ transaction.toCountry }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ transaction.senderName }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ transaction.senderAccNo }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ transaction.sendingAmount }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ transaction.sendingCurrency }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ transaction.receiverName }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ transaction.receiverAccNo }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ transaction.receivingCurrency }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ transaction.totalAmount }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ transaction.transactionDate }}</td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <button (click)="generatePDF(transaction)"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-xs">
+                            <!-- Reduced button font size -->
+                            Generate PDF
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
