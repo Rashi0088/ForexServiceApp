@@ -43,22 +43,39 @@ export class GenerateReportComponent implements OnInit {
 
     // Watermark
     doc.setFontSize(40);
-    doc.setTextColor(150);
+    doc.setTextColor(200);
     doc.text('Forex Service', 105, 150, { align: 'center', angle: -45 }); // Semi-transparent watermark
 
     // Resetting font for body
     doc.setFontSize(12);
     doc.setTextColor(0);
 
-    // Adding transaction details
+    // const transposedData = [
+    //   ['Transaction ID'],
+    //   ['From Country'],
+    //   ['To Country'],
+    //   ['Sender Name'],
+    //   ['Receiver Name'],
+    //   ['Sender Account No.'],
+    //   ['Receiver Account No.'],
+    //   ['Sending Currency'],
+    //   ['Receiving Currency'],
+    //   ['Sending Amount'],
+    //   ['Total Amount'],
+    //   ['Transaction Date']
+    // ].map((header, index) => {
+    //   return [header[0], transaction[index]]; // Combine header and data
+    // });
+    const transposedData = Object.keys(transaction).map((key) => {
+      return [key, transaction[key]]; // Combine key and value
+    });
+
+    
     autoTable(doc, {
       startY: 30,
-      head: [['Transaction ID', 'From Country', 'To Country', 'Sender Name', 'Receiver Name']],
-      body: [
-        [transaction.transactionId, transaction.fromCountry, transaction.toCountry, transaction.senderName, transaction.receiverName],
-        // Add other transaction details as needed
-      ],
-      theme: 'striped', // or 'grid' or 'plain'
+      head: [['Attribute', 'Value']], // Updated header for transposed data
+      body: transposedData,
+      theme: 'grid', // or 'striped' or 'plain'
       headStyles: { fillColor: [22, 160, 133] }, // Customize header background color
       margin: { top: 30 }
     });
@@ -66,4 +83,5 @@ export class GenerateReportComponent implements OnInit {
     // Save the PDF
     doc.save(`TransactionReport-${transaction.transactionId}.pdf`);
   }
+
 }

@@ -1,4 +1,23 @@
 
+
+    // Adding transaction details
+  //   autoTable(doc, {
+  //     startY: 30,
+  //     head: [['Transaction ID', 'From Country', 'To Country', 'Sender Name', 'Receiver Name','Sender Account No.','Receiver Account No.','Sending Currency','Receiving Currency','Sending Amount','Total Amount','Transaction Date']],
+  //     body: [
+  //       [transaction.transactionId, transaction.fromCountry, transaction.toCountry, transaction.senderName, transaction.receiverName,transaction.senderAccNo,transaction.receiverAccNo,
+  //         transaction.sendingCurrency,transaction.receivingCurrency,transaction.sendingAmount,transaction.totalAmount,transaction.transactionDate],
+  //       // Add other transaction details as needed
+  //     ],
+  //     theme: 'grid', // or 'grid' or 'plain'
+  //     headStyles: { fillColor: [22, 160, 133] }, // Customize header background color
+  //     margin: { top: 30 }
+  //   });
+
+  //   // Save the PDF
+  //   doc.save(`TransactionReport-${transaction.transactionId}.pdf`);
+  // 
+=======================================================
 <div class="forx-website" style="width: 100vw;height: 100vh;">
   <app-header></app-header>
     <!-- <div class="navbar-container" style="background-color: white;">

@@ -14,10 +14,6 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
 
-  // showError() {
-  //   this.toastr.error('Invalid credentials', 'Error');
-  // }
-
   email: string = '';
   password: string = '';
   role: string = '';
@@ -33,6 +29,14 @@ export class LoginComponent implements OnInit {
       text: 'You are now logged in.',
     });
   }
+  showFailure() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Login Failed!',
+      text: 'Invalid Credentials! Try Again!',
+    });
+  }
+
 
   onSubmit() {
     const payload = {
@@ -62,7 +66,7 @@ export class LoginComponent implements OnInit {
         },
         (error) => {
           console.error('API Error:', error);
-          // this.showError();
+          this.showFailure();
         }
       );
     } else {
