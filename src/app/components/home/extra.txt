@@ -1,6 +1,4 @@
- UAE Dirham (AED)
-  Thai Baht equals
-  
+
 <div class="forx-website" style="width: 100vw;height: 100vh;">
   <app-header></app-header>
     <!-- <div class="navbar-container" style="background-color: white;">

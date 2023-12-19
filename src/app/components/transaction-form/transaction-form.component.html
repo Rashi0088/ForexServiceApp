@@ -1,0 +1,93 @@
+<!-- transaction.component.html -->
+<div class="max-w-2xl mx-auto my-8 p-6 bg-white rounded-md shadow-md">
+    <div class="flex justify-between items-center p-2 bg-gray-800 text-white rounded-t-md mb-4">
+        <span class="font-bold text-lg">Create Transaction</span>
+        <button (click)="closeTransactionPopup()" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+            <!-- SVG for close icon -->
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                </path>
+            </svg>
+        </button>
+    </div>
+
+    <form class="grid grid-cols-2 gap-4">
+
+        <!-- From Country -->
+        <div class="mb-4">
+            <label for="fromCountry" class="block text-sm font-medium text-gray-600">From Country</label>
+            <input type="text" id="fromCountry" name="fromCountry" [(ngModel)]="transaction.fromCountry"
+                class="mt-1 p-2 w-full border rounded-md">
+        </div>
+
+        <!-- To Country -->
+        <div class="mb-4">
+            <label for="toCountry" class="block text-sm font-medium text-gray-600">To Country</label>
+            <input type="text" id="toCountry" name="toCountry" [(ngModel)]="transaction.toCountry"
+                class="mt-1 p-2 w-full border rounded-md">
+        </div>
+
+        <!-- Sender Name -->
+        <div class="mb-4">
+            <label for="senderName" class="block text-sm font-medium text-gray-600">Sender Name</label>
+            <input type="text" id="senderName" name="senderName" [(ngModel)]="transaction.senderName"
+                class="mt-1 p-2 w-full border rounded-md">
+        </div>
+
+        <!-- Receiver Name -->
+        <div class="mb-4">
+            <label for="receiverName" class="block text-sm font-medium text-gray-600">Receiver Name</label>
+            <input type="text" id="receiverName" name="receiverName" [(ngModel)]="transaction.receiverName"
+                class="mt-1 p-2 w-full border rounded-md">
+        </div>
+
+        <!-- Sender Account Number -->
+        <div class="mb-4">
+            <label for="senderAccNo" class="block text-sm font-medium text-gray-600">Sender Account Number</label>
+            <input type="number" id="senderAccNo" name="senderAccNo" [(ngModel)]="transaction.senderAccNo"
+                class="mt-1 p-2 w-full border rounded-md">
+        </div>
+
+        <!-- Receiver Account Number -->
+        <div class="mb-4">
+            <label for="receiverAccNo" class="block text-sm font-medium text-gray-600">Receiver Account Number</label>
+            <input type="number" id="receiverAccNo" name="receiverAccNo" [(ngModel)]="transaction.receiverAccNo"
+                class="mt-1 p-2 w-full border rounded-md">
+        </div>
+
+        <!-- Sending Currency -->
+        <div class="mb-4">
+            <label for="sendingCurrency" class="block text-sm font-medium text-gray-600">Sending Currency</label>
+            <input type="text" id="sendingCurrency" name="sendingCurrency" [(ngModel)]="transaction.sendingCurrency"
+                class="mt-1 p-2 w-full border rounded-md">
+        </div>
+
+        <!-- Receiving Currency -->
+        <div class="mb-4">
+            <label for="receivingCurrency" class="block text-sm font-medium text-gray-600">Receiving Currency</label>
+            <input type="text" id="receivingCurrency" name="receivingCurrency"
+                [(ngModel)]="transaction.receivingCurrency" class="mt-1 p-2 w-full border rounded-md">
+        </div>
+
+        <!-- Sending Amount -->
+        <div class="mb-4">
+            <label for="sendingAmount" class="block text-sm font-medium text-gray-600">Sending Amount</label>
+            <input type="number" id="sendingAmount" name="sendingAmount" [(ngModel)]="transaction.sendingAmount"
+                class="mt-1 p-2 w-full border rounded-md">
+        </div>
+
+        <!-- Transaction Date -->
+        <div class="mb-4 col-span-2">
+            <label for="transactionDate" class="block text-sm font-medium text-gray-600">Transaction Date</label>
+            <input type="date" id="transactionDate" name="transactionDate" [(ngModel)]="transaction.transactionDate"
+                class="mt-1 p-2 w-full border rounded-md">
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" (click)="submitTransaction()"
+            class="col-span-2 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-md">
+            Submit Transaction
+        </button>
+    </form>
+</div>

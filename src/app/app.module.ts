@@ -25,6 +25,8 @@ import { popupReducer } from './store/reducer/popup.reducer';
 import { AdminRateComponent } from './components/admin-rate/admin-rate.component';
 import { UpdateCurrencyComponent } from './components/update-currency/update-currency.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { TransactionFormComponent } from './components/transaction-form/transaction-form.component';
+import { GenerateReportComponent } from './generate-report/generate-report.component';
 
 
 @NgModule({
@@ -45,6 +47,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     AdminRateComponent,
     UpdateCurrencyComponent,
     SidebarComponent,
+    TransactionFormComponent,
+    GenerateReportComponent,
 
 
   ],

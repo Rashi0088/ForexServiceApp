@@ -1,20 +1,21 @@
 // currency-converter.component.ts
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { AppState, selectIsLoggedIn } from '../../store/selectors/auth.selectors';
+import { AppState, selectIsLoggedIn, selectUser } from '../../store/selectors/auth.selectors';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
+import { TransactionFormComponent } from '../transaction-form/transaction-form.component';
 
 @Component({
   selector: 'app-currency-converter',
   templateUrl: './currency-converter.component.html',
   styleUrls: ['./currency-converter.component.css']
 })
-export class CurrencyConverterComponent {
+export class CurrencyConverterComponent implements OnInit {
   isLoggedIn$: Observable<boolean>;
-
+  popupState: boolean = false;
   amountToSend: number = 0;
   exchangeRate: number = 0;
   fees: number = 0;
@@ -30,22 +31,41 @@ export class CurrencyConverterComponent {
   baseFeePercent: number = 0.5; // Hypothetical percentage fee for the transaction
   fixedFee: number = 1.50;
   baseFeeRate: number = 0.01; // Example base fee rate (1%)
-
+  selectedFromCountry: string = ''; // Replace with actual default value
+  selectedToCountry: string = ''; // Replace with actual default value
+  senderName: string = 'Your Name';
   fixedFees: { [key: string]: number } = {
     'USD': 1.00,
     'EUR': 0.50,
     'INR': 50.00,
     // Add fixed fees for other currencies as required
   };
+  @ViewChild(TransactionFormComponent) transactionFormComponent!: TransactionFormComponent;
 
   constructor(private http: HttpClient, private store: Store<AppState>, private router: Router) {
     this.loadCurrencyList();
     this.isLoggedIn$ = this.store.select(selectIsLoggedIn);
   }
+
+  ngOnInit() {
+    this.store.select(selectUser).subscribe((user) => {
+      this.senderName = user?.name || 'Default Name'; // Use a default name if user name is not available
+    });
+
+    // Set default countries based on default currencies
+    this.selectedFromCountry = this.getCountryByCurrency(this.selectedFromCurrency);
+    this.selectedToCountry = this.getCountryByCurrency(this.selectedToCurrency);
+  }
+  togglePopupState() {
+    this.popupState = !this.popupState;
+  }
+
   getStarted() {
     this.isLoggedIn$.subscribe(isLoggedIn => {
       if (isLoggedIn) {
-        this.router.navigate(['/home']);
+        // this.router.navigate(['/home']);
+        console.log('check popup state', this.popupState)
+        this.togglePopupState()
       } else {
         this.router.navigate(['/login']);
       }
@@ -59,6 +79,22 @@ export class CurrencyConverterComponent {
   onCurrencyChange() {
     if (this.amountToSend > 0) {
       this.calculate();
+    }
+    // Example logic to update country based on currency
+    this.store.select(selectUser).subscribe((user) => {
+      this.senderName = user.name;
+
+    });
+    this.selectedFromCountry = this.getCountryByCurrency(this.selectedFromCurrency);
+    this.selectedToCountry = this.getCountryByCurrency(this.selectedToCurrency);
+  }
+  getCountryByCurrency(currency: string): string {
+    switch (currency) {
+      case 'USD': return 'United States';
+      case 'EUR': return 'Europe';
+      case 'INR': return 'India';
+      // ... other cases ...
+      default: return '';
     }
   }
 

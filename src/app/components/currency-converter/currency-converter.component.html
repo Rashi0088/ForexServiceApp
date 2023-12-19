@@ -95,4 +95,12 @@
         </div>
 
     </div>
+    <div *ngIf="popupState" class="fixed-overlay">
+        <div class="modal-container">
+            <app-transaction-form [fromCountry]="selectedFromCountry" [toCountry]="selectedToCountry"
+                [senderName]="senderName" [sendingCurrency]="selectedFromCurrency"
+                [receivingCurrency]="selectedToCurrency" [sendingAmount]="amountToSend"
+                (popupStateChanged)="togglePopupState()"></app-transaction-form>
+        </div>
+    </div>
 </div>

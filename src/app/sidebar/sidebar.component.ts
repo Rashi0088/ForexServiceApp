@@ -40,4 +40,5 @@ export class SidebarComponent {
     this.toggleBankDetails.emit(this.isBankDetailVisible);
     this.toggleSendMoney.emit(this.isSendMoneyVisible);
   }
+  
 }
