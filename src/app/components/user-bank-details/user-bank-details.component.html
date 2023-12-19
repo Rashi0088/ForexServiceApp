@@ -26,7 +26,7 @@
 
         <div *ngIf="popupState" class="fixed-overlay">
             <div class="modal-container">
-                <app-add-bank-account (popupStateChanged)="togglePopupState()"></app-add-bank-account>
+                <app-add-bank-account (bankAccountAdded)="onBankAccountAdded($event)" (popupStateChanged)="togglePopupState()"></app-add-bank-account>
             </div>
         </div>
     </div>

@@ -1,48 +1,121 @@
-<div class="container" style="margin-top: 100px;">
+<div class="table-responsive">
+  <div class="container" style="margin-top: 100px;" class="table table-striped">
     <h2 style="font-size: 2.4rem;font-weight: 700;text-align: center;margin-bottom: 45px;">Admin Exchange Rates</h2>
-    <button class="btn btn-primary" style="margin-bottom: 20px;"[routerLink]="['/updatecurrency']">Add Exchange Rate</button>
-
+    <button class="btn btn-primary" style="margin-bottom: 20px;" (click)="openAddRateModal()">Add Exchange Rate</button>
     <!-- updatecurrency -->
     <table class="table table-striped">
-      <thead>
+      <thead class="border text-align-center">
         <tr>
-          <th>From Currency</th>
-          <th>To Currency</th>
-          <th>Rate</th>
-          <th>Action</th>
-          <th>Date</th>
+          <th class="cursor-pointer px-4 py-2 bg-gray-200 hover:bg-gray-300 relative" (click)="sortRates('id')">
+            <span>S.No</span>
+            <span class="tooltip-text">Sort by S.No</span>
+          </th>
+          <th class="cursor-pointer px-4 py-2 bg-gray-200 hover:bg-gray-300 relative"
+            (click)="sortRates('fromCurrency')">
+            <span>From Currency</span>
+            <span class="tooltip-text">Sort by From Currency</span>
+          </th>
+          <th class="cursor-pointer px-4 py-2 bg-gray-200 hover:bg-gray-300 relative" (click)="sortRates('toCurrency')">
+            <span>To Currency</span>
+            <span class="tooltip-text">Sort by To Currency</span>
+          </th>
+          <th class="cursor-pointer px-4 py-2 bg-gray-200 hover:bg-gray-300 relative" (click)="sortRates('rate')">
+            <span>Rate</span>
+            <span class="tooltip-text">Sort by Rate</span>
+          </th>
+          <!-- Action column, not sortable, so no cursor or tooltip -->
+          <th class="px-4 py-2 bg-gray-200">Action</th>
+          <th class="cursor-pointer px-4 py-2 bg-gray-200 hover:bg-gray-300 relative" (click)="sortRates('date')">
+            <span>Date</span>
+            <span class="tooltip-text">Sort by Date</span>
+          </th>
         </tr>
+
       </thead>
-      <tbody>
+      <tbody class="text-align-center">
         <tr *ngFor="let rate of rates">
+          <td>{{rate.id}}</td>
           <td>{{ rate.fromCurrency }}</td>
           <td>{{ rate.toCurrency }}</td>
           <td>{{ rate.rate }}</td>
           <td>
             <button class="btn btn-primary btn-sm px-3 mx-2" (click)="openEditModal(rate)">Edit</button>
-            <button class="btn btn-danger btn-sm px-3" (click)="openDeleteModal(rate)">Delete</button>
+            <button class="btn btn-danger btn-sm px-3">Delete</button>
           </td>
           <td>{{ rate.date }}</td>
         </tr>
       </tbody>
     </table>
-  
-    <!-- Add Rate Modal -->
-    <ng-template #addRateModal let-modal>
-      <div class="modal-header">
-        <h5 class="modal-title">Add Rate</h5>
-        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <!-- Your form or content for adding a new rate goes here -->
-        <p>Your modal content for adding a new rate goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Cancel click')">Close</button>
-        <!-- <button type="button" class="btn btn-primary" (click)="saveChanges(rate)">Save changes</button> -->
-      </div>
-    </ng-template>
   </div>
-  
+</div>
+
+
+<!-- Edit Rate Modal -->
+<ng-template #editRateModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">Edit Rate</h5>
+    <button type="button" class="close" aria-label="Close" (click)="closeEditModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" *ngIf="currentRate">
+    <form>
+      <div class="form-group">
+        <label>From Currency</label>
+        <input type="text" class="form-control" [(ngModel)]="currentRate.fromCurrency" name="fromCurrency">
+      </div>
+      <div class="form-group">
+        <label>To Currency</label>
+        <input type="text" class="form-control" [(ngModel)]="currentRate.toCurrency" name="toCurrency">
+      </div>
+      <div class="form-group">
+        <label>Rate</label>
+        <input type="number" class="form-control" [(ngModel)]="currentRate.rate" name="rate">
+      </div>
+      <div class="form-group">
+        <label>Date</label>
+        <input type="text" class="form-control" [(ngModel)]="currentRate.date" name="date">
+      </div>
+    </form>
+  </div>
+  <!-- Modal Footer -->
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="closeEditModal()">Close</button>
+    <button type="button" class="btn btn-primary" (click)="updateExchangeRate()">Save changes</button>
+  </div>
+</ng-template>
+
+<!-- Add Rate Modal -->
+<ng-template #addRateModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">Add Rate</h5>
+    <button type="button" class="close" aria-label="Close" (click)="closeEditModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <!-- Form fields for adding a new rate -->
+      <div class="form-group">
+        <label>From Currency</label>
+        <input type="text" class="form-control" [(ngModel)]="newRate.fromCurrency" name="newFromCurrency">
+      </div>
+      <div class="form-group">
+        <label>To Currency</label>
+        <input type="text" class="form-control" [(ngModel)]="newRate.toCurrency" name="newToCurrency">
+      </div>
+      <div class="form-group">
+        <label>Rate</label>
+        <input type="number" class="form-control" [(ngModel)]="newRate.rate" name="newRate">
+      </div>
+      <div class="form-group">
+        <label>Date</label>
+        <input type="date" class="form-control" [(ngModel)]="newRate.date" name="newDate">
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="closeEditModal()">Close</button>
+    <button type="button" class="btn btn-primary" (click)="addExchangeRate()">Add Rate</button>
+  </div>
+</ng-template>

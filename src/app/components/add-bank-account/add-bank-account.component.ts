@@ -40,7 +40,8 @@ export class AddBankAccountComponent {
       this.http.post('http://localhost:8080/UserBankDetails/save', this.bankAccount)
         .subscribe(response => {
           console.log('Bank account added:', response);
-          this.closeAddBankDetailsPopup(); // Close the popup after adding an account
+          this.closeAddBankDetailsPopup();
+          this.bankAccountAdded.emit(true); // Emit event that bank account is added // Close the popup after adding an account
           // handle response here
         }, error => {
           console.error('Error adding bank account:', error);

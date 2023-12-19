@@ -31,6 +31,8 @@ export class UserBankDetailsComponent implements OnInit {
     });
   }
 
+  
+
   loadBankAccounts() {
     this.store.select(selectUser).subscribe((user) => {
       if (user && user.adminId) {
@@ -41,6 +43,7 @@ export class UserBankDetailsComponent implements OnInit {
       }
     });
 
+    
     this.http.get(`${this.baseUrl}/${this.userId}`).subscribe(
       (response: any) => {
         console.log('Bank account data:', response);
@@ -51,4 +54,9 @@ export class UserBankDetailsComponent implements OnInit {
       }
     );
   }
+  
+  onBankAccountAdded(success: boolean) {
+    if (success) {
+      this.loadBankAccounts(); // Call the method to load bank accounts
+    }}
 }

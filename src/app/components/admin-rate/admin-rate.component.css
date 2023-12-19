@@ -1,0 +1,46 @@
+/* Responsive table */
+.table-responsive {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Odd row style */
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05); /* Light gray background */
+  }
+  
+  /* Even row style */
+  .table-striped tbody tr:nth-of-type(even) {
+    background-color: #fff; /* White background */
+  }
+  
+  /* Tooltip style */
+  .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #007bff; /* Change to your preferred color */
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    font-size: 0.8rem; /* Smaller font size */
+  }
+  
+  /* Show tooltip on hover */
+  th:hover .tooltip-text {
+    visibility: visible;
+  }
+  
+  /* Table headers with border */
+  .table th {
+    border: 1px solid #dee2e6; /* Add border to table headers */
+  }
+  

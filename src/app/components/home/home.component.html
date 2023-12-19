@@ -1,15 +1,11 @@
 <div class="forex-website" style="width: 98.5vw;height: 100vh;margin: auto;">
 
-  <div class="container mx-auto mt-20 max-w-7xl"> <!-- Margin-top to push content below the navbar height -->
-
-    <!-- Background Image Container -->
+  <div class="container mx-auto mt-20 max-w-7xl"> 
     <div class="relative rounded-lg shadow-lg w-full h-80 bg-black text-white overflow-hidden group"
       style="height: 80vh;">
-      <!-- Background Image with Opacity and parallax-like effect -->
       <div
         class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 transform group-hover:scale-105 transition-transform duration-500 ease-in-out"
         style="background-image: url('../../../assets/bg2.jpg');">
-        <!-- Replace with your image path -->
       </div>
 
       <!-- Content Container with a max-width and centered, additional margin for top spacing -->
@@ -26,8 +22,6 @@
       </div>
     </div>
   </div>
-
-
   <style>
     @keyframes bounce {
 
@@ -79,43 +73,41 @@
       style="display: flex;justify-content: space-around;flex-wrap: wrap;align-items: center;padding:15vh 10px;">
 
       
-      <div class="card" style="width: 18rem;height: 25rem;margin: 10px 0;">
+      <div class="card" style="width: 18rem;height: 25rem;margin: 10px 0;padding-bottom: 10px;">
         <img src="../../../assets/people1.png" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a style="margin-top: 20px;" href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 style="font-weight: 600;" class="card-title">James Smith</h5>
+          <p class="card-text">Currencies are traded in pairs, where one currency is exchanged for another. The exchange rate represents the value of one currency relative to another.</p>
+          <!-- <a style="margin-top: 20px;" href="#" class="btn btn-primary">Go somewhere</a> -->
         </div>
       </div>
 
       <div class="card" style="width: 18rem;height: 25rem;margin: 10px 0;">
         <img src="../../../assets/people2.png" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a style="margin-top: 20px;" href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 style="font-weight: 600;" class="card-title">Mary Smith</h5>
+          <p class="card-text">Many participants engage in forex trading for speculative purposes or as part of their investment strategy. 
+            Traders seek to profit from fluctuations in currency prices.
+          </p>
+          <!-- <a style="margin-top: 20px;" href="#" class="btn btn-primary">Go somewhere</a> -->
         </div>
       </div>
 
       <div class="card" style="width: 18rem; height: 25rem;margin: 10px 0;">
         <img src="../../../assets/people3.png" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a style="margin-top: 20px;" href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 style="font-weight: 600;" class="card-title">Maria Garcia</h5>
+          <p class="card-text">The forex market is truly global, with major trading centers in different time zones, including London, New York, Tokyo, and Sydney.  </p>
+          <!-- <a style="margin-top: 20px;" href="#" class="btn btn-primary">Go somewhere</a> -->
         </div>
       </div>
 
       <div class="card" style="width: 18rem;height: 25rem;margin: 10px 0;">
         <img src="../../../assets/people4.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a style="margin-top: 20px;" href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 style="font-weight: 600;" class="card-title">Clare Hernandez</h5>
+          <p class="card-text">Forex traders closely monitor economic indicators, interest rates, geopolitical events, and other factors that can influence currency values. </p>
+          <!-- <a style="margin-top: 20px;" href="#" class="btn btn-primary">Go somewhere</a> -->
         </div>
       </div>
     </div>
@@ -140,44 +132,47 @@
     }
   </style>
   
-
-
 <!-- ==========================================Third Section=========================================== -->
 
 <div class="bg-gradient-to-r from-green-400 to-yellow-600 py-4 px-6 md:px-12" style="margin-bottom: 30px;">
-  <div class="flex justify-between items-center max-w-6xl mx-auto">
-      <h2 class="text-xl md:text-2xl text-black font-semibold">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-8">
+        <h2 class="text-xl md:text-2xl text-black font-semibold">
           Ready to make your first transfer? Create your free account now.
-      </h2>
-      <button
-      (click)="navigateToRegister()"
-          class="bg-blue-800 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+        </h2>
+      </div>
+      <div class="col-md-4 mt-3 mt-md-0 text-center text-md-end">
+        <button
+          (click)="navigateToRegister()"
+          class="btn btn-primary btn-lg">
           Sign up now <span aria-hidden="true">›</span>
-      </button>
+        </button>
+      </div>
+      
+    </div>
   </div>
 </div>
 
+
 <!-- ==========================================Fourth Section=========================================== -->
 
+<div class="container-fluid bg-secondary">
+  <div class="row">
   
-<!-- <div class="fourth-sec" style="background-color: pink;width: 98vw;height: 90%;margin: 30px auto;">
+    <div class="col-lg-6 col-md-12" style="padding: 5% 6%; margin: 10% auto;">
+      <h2 style="font-size: 3em; font-weight: 700; color: white;">Make your money move, fast</h2>
+      <p style="font-size: 20px; color: white;margin: 20px auto;">Send to 70+ countries, fast. Free from hidden fees and exchange rate markups. We’re more than just money transfers. Stay informed about currencies with these helpful tools</p>
+      <div class="btns">
+        <button type="button" class="btn btn-success btn-lg" style="border-radius: 30px;border-color: white; padding: 10px 20px; margin-top: 10px;">Open an account</button>
+      </div>
+    </div>
 
-  <app-currency-calculator></app-currency-calculator>
-</div> -->
+    <div class="col-lg-6 col-md-12 bg-secondary" style="padding: 5%; height: 100%;">
+      <app-currency-converter></app-currency-converter>
+    </div>
 
-<div class="fourth-cont" style="background-color: #485267;width: 98vw;height: 130vh;display: flex;">
-  <div class="lefty-side" style="width: 50%;padding: 100px 60px;margin: 18vh auto;" >
-    <h2 style="font-size: 3em;padding:20px 5px;font-weight: 700;color: white;">Make your money move, fast</h2>
-    <p style="font-size: 20px;padding:20px 5px;color: white;">Send to 70+ countries, fast. Free from hidden fees and exchange rate markups. 
-      We’re more than just money transfers.
-      Stay informed about currencies with these helpful tools</p>
-    <!-- <div class="btns" style="display: flex;align-items: center ;">
-        <button type="button" class="btn btn-success" style="border-radius: 30px;padding: 10px 20px;margin-top: 10px;">Open an account</button>
-    </div> -->
-  </div>   
-  <div class="righty-side" style="background-color: #485267;width: 45%;height: 100%;" >
-   <app-currency-converter></app-currency-converter>
-  </div> 
+  </div>
 </div>
 
 
@@ -249,7 +244,7 @@
             <i class="fas fa-gem me-3"></i>Company name
           </h6>
           <p >
-            Foreign service company also known as foreign service broker or simply forex broker is a company that offers currency exchange and international payments to private individuals and companies.
+            Forex service company also known as forex service broker or simply forex broker is a company that offers currency exchange and international payments to private individuals and companies.
           </p>
         </div>
         <!-- Grid column -->
@@ -267,7 +262,7 @@
             <a href="#!" class="text-reset">USA</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Europe</a>
+            <a href="#!" class="text-reset">France</a>
           </p>
           <p>
             <a href="#!" class="text-reset">UAE</a>

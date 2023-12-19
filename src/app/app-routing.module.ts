@@ -12,6 +12,7 @@ import { AddBankAccountComponent } from './components/add-bank-account/add-bank-
 import { UserBankDetailsComponent } from './components/user-bank-details/user-bank-details.component';
 import { AdminRateComponent } from './components/admin-rate/admin-rate.component';
 import { UpdateCurrencyComponent } from './components/update-currency/update-currency.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
 
 const routes: Routes = [
 
@@ -26,10 +27,7 @@ const routes: Routes = [
   { path: 'userProfile', component: UserProfileCardComponent },
   { path: 'bankDetails', component: UserBankDetailsComponent },
   { path: 'updatecurrency', component: UpdateCurrencyComponent },
-  // { path: '', redirectTo: '/home', pathMatch: 'full' },
-  // { path: '', redirectTo: '/userProfile', pathMatch: 'full' }
-
-
+  { path: 'aboutUs', component: AboutusComponent },
 ];
 
 @NgModule({

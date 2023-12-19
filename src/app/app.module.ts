@@ -27,6 +27,8 @@ import { UpdateCurrencyComponent } from './components/update-currency/update-cur
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TransactionFormComponent } from './components/transaction-form/transaction-form.component';
 import { GenerateReportComponent } from './generate-report/generate-report.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -49,17 +51,19 @@ import { GenerateReportComponent } from './generate-report/generate-report.compo
     SidebarComponent,
     TransactionFormComponent,
     GenerateReportComponent,
+    AboutusComponent,
 
 
   ],
   imports: [
-
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule, 
     BrowserAnimationsModule, // required for toastr animations
     StoreModule.forRoot({ auth: authReducer, popup: popupReducer }),
+
+    ModalModule.forRoot(),
 
   ],
   providers: [],
