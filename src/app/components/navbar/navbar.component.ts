@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState, selectIsLoggedIn } from '../../store/selectors/auth.selectors';
-import { Observable } from 'rxjs';
+import { Observable, take } from 'rxjs';
 import * as AuthActions from 'src/app/store/actions/auth.action'; // Import the logout action
 import { Router } from '@angular/router';
 
@@ -17,6 +17,23 @@ export class NavbarComponent {
 
   constructor(private router: Router, private store: Store<AppState>) {
     this.isLoggedIn$ = this.store.select(selectIsLoggedIn);
+  }
+  // changeRoute(){
+  //   if(!this.isLoggedIn$){
+  //     console.log("working")
+  //     this.router.navigate(['/home']);
+  //   }
+  //   else{
+  //     console.log("wekll")
+  //     this.router.navigate(['/']);
+  //   }
+  // }
+
+  changeRoute() {
+    this.isLoggedIn$.pipe(take(1)).subscribe((isLoggedIn) => {
+      const route = !isLoggedIn ? '/' : '/home';
+      this.router.navigate([route]);
+    });
   }
   logout() {
     this.store.dispatch(AuthActions.logout());
