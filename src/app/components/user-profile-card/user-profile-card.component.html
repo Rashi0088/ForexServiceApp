@@ -1,9 +1,9 @@
-<div class="profile-container">
-    <div *ngIf="user$ | async as user"
+<div style="margin-top: 20vh;" *ngIf="user$ | async as user"  [ngClass]="{'profile-container': user.name !== 'Admin'}">
+    <div 
         class="max-w-sm mx-auto mt-10 bg-white rounded-lg shadow-md overflow-hidden md:max-w-2xl animate-fade-in-up transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
         <div class="md:flex">
             <div class="md:flex-shrink-0">
-                <img class="h-48 w-full object-cover md:w-48" src="{{user.imageUrl}}" alt="User Image">
+                <img class="h-48 w-full object-cover md:w-48" style="margin: 30px;background-repeat: no-repeat;" src="../../../assets/userIconF.webp" alt="User Image">
             </div>
             <div class="p-8">
                 <h2 class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Profile</h2>

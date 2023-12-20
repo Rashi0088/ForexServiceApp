@@ -38,6 +38,8 @@ export class CurrencyConverterComponent implements OnInit {
     'USD': 1.00,
     'EUR': 0.50,
     'INR': 50.00,
+    'AED': 3.67, // Fee for United Arab Emirates (UAE)
+    'THB': 31.50, // Fee for Thailand (THB)
     // Add fixed fees for other currencies as required
   };
   @ViewChild(TransactionFormComponent) transactionFormComponent!: TransactionFormComponent;
@@ -73,7 +75,7 @@ export class CurrencyConverterComponent implements OnInit {
   }
   loadCurrencyList() {
     // Load your currency list here, possibly from an API or a static list
-    this.currencyList = ['USD', 'EUR', 'INR']; // Example static list
+    this.currencyList = ['USD', 'EUR', 'INR','AED','THB']; // Example static list
   }
 
   onCurrencyChange() {
@@ -93,6 +95,8 @@ export class CurrencyConverterComponent implements OnInit {
       case 'USD': return 'United States';
       case 'EUR': return 'Europe';
       case 'INR': return 'India';
+      case 'AED': return 'UAE';
+      case 'THB': return 'Thailand';
       // ... other cases ...
       default: return '';
     }

@@ -80,8 +80,8 @@
   </div>
   <!-- Modal Footer -->
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" (click)="closeEditModal()">Close</button>
-    <button type="button" class="btn btn-primary" (click)="updateExchangeRate()">Save changes</button>
+    <button type="button" class="btn btn-secondary" style="background-color: gray;" (click)="closeEditModal()">Close</button>
+    <button type="button" class="btn btn-primary" style="background-color: blue;" (click)="updateExchangeRate()">Save changes</button>
   </div>
 </ng-template>
 
@@ -89,7 +89,7 @@
 <ng-template #addRateModal let-modal>
   <div class="modal-header">
     <h5 class="modal-title">Add Rate</h5>
-    <button type="button" class="close" aria-label="Close" (click)="closeEditModal()">
+    <button type="button" class="close" aria-label="Close"  (click)="closeEditModal()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
@@ -115,7 +115,7 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" (click)="closeEditModal()">Close</button>
-    <button type="button" class="btn btn-primary" (click)="addExchangeRate()">Add Rate</button>
+    <button type="button" class="btn btn-secondary" style="background-color: gray;" (click)="closeEditModal()">Close</button>
+    <button type="button" class="btn btn-primary" style="background-color: blue;" (click)="addExchangeRate()">Add Rate</button>
   </div>
 </ng-template>

@@ -16,6 +16,7 @@ export class SidebarComponent {
   private isBankDetailVisible = false;
   private isSendMoneyVisible = false;  // New property
 
+
   toggleUserProfile() {
     this.toggleProfile.emit(true);
     // Set other properties to false to hide other components
