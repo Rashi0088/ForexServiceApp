@@ -9,10 +9,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { HeaderComponent } from './components/header/header.component';
 import { RegisterComponent } from './components/register/register.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { TransactionComponent } from './components/transaction/transaction.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { StoreModule } from '@ngrx/store';
 import { authReducer } from './store/reducer/auth.reducer';
@@ -36,10 +33,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    HeaderComponent,
     RegisterComponent,
-    DashboardComponent,
-    TransactionComponent,
     NavbarComponent,
     CurrencyConverterComponent,
     UserhomeComponent,
