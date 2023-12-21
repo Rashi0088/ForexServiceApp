@@ -15,15 +15,18 @@
         <h1 class="text-5xl font-bold my-4 text-shadow z-10 bounce">Worry-free transfers for you and your loved ones </h1>
         <p class="text-2xl mb-6 text-shadow z-10 bounce">Your Choice Is Simple</p>
         <!-- ... rest of your content ... -->
-        <a href="#"
+        <a href="#fourthsection"
           class="px-6 py-2 border border-transparent text-base font-medium rounded-md text-black bg-yellow-300 hover:bg-yellow-400 md:py-4 md:text-lg md:px-10 transition duration-300 ease-in-out shadow-lg transform hover:scale-110 z-10">
           Our Services
         </a>
-        <i style="font-size: 30px;margin-top: 10px;" class="ri-arrow-down-circle-line "></i>
+        <i style="font-size: 30px;margin-top: 10px; line-height: 3; " class="ri-arrow-down-circle-line  z-10  bounce"></i>
       </div>
     </div>
   </div>
   <style>
+  
+
+  
     @keyframes bounce {
 
       0%,
@@ -39,6 +42,9 @@
     .bounce {
       animation: bounce 4s ease-in-out infinite;
     }
+    /* .ri-arrow-down-circle-line{
+      animation: bounce 4s ease-out infinite;
+    } */
 
     .text-shadow {
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -64,6 +70,7 @@
       width: 301px !important;
       border-radius: 5px;
     }
+    
   </style>
 
 
@@ -158,14 +165,14 @@
 
 <!-- ==========================================Fourth Section=========================================== -->
 
-<div class="container-fluid bg-secondary">
+<div class="container-fluid bg-secondary" id="fourthsection">
   <div class="row">
   
     <div class="col-lg-6 col-md-12" style="padding: 5% 6%; margin: 10% auto;">
       <h2 style="font-size: 3em; font-weight: 700; color: white;">Make your money move, fast</h2>
       <p style="font-size: 20px; color: white;margin: 20px auto;">Send to 70+ countries, fast. Free from hidden fees and exchange rate markups. We’re more than just money transfers. Stay informed about currencies with these helpful tools</p>
       <div class="btns">
-        <button type="button" class="btn btn-success btn-lg" style="border-radius: 30px;border-color: white; padding: 10px 20px; margin-top: 10px;">Open an account</button>
+        <button routerLink="/register" type="button" class="btn btn-success btn-lg" style="border-radius: 30px;border-color: white; padding: 10px 20px; margin-top: 10px;">Open an account</button>
       </div>
     </div>
 
